@@ -82,7 +82,7 @@ const RazorpayPaymentButton = ({
       amount: session.amount.toString(),
       order_id: orderData.id,
       currency: cart.region.currency_code.toLocaleUpperCase(),
-      name: process.env.COMPANY_NAME ?? "CHARANDULL ",
+      name: process.env.COMPANY_NAME ?? "Charandhul ",
       description: `Order number ${orderData.id}`,
 
       image: "https://res.cloudinary.com/dgvwg1ikm/image/upload/v1719594807/vkcustoby50gjjiwhqqc.jpg ",

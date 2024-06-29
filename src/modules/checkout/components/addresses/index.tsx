@@ -54,7 +54,7 @@ const Addresses = ({
       <div className="flex flex-row items-center justify-between mb-6">
         <Heading
           level="h2"
-          className="flex flex-row text-3xl-regular gap-x-2 items-baseline"
+          className="flex md:flex-row text-3xl-regular gap-x-2 items-baseline flex-col"
         >
           Shipping Address
           {!isOpen && <CheckCircleSolid />}
@@ -102,13 +102,13 @@ const Addresses = ({
         <div>
           <div className="text-small-regular">
             {cart && cart.shipping_address ? (
-              <div className="flex items-start gap-x-8">
-                <div className="flex items-start gap-x-1 w-full">
-                  <div className="flex flex-col w-1/3" data-testid="shipping-address-summary">
+              <div className=" items-start gap-x-8 ">
+                <div className="flex items-start gap-x-1 w-full  md:flex-row flex-col">
+                  <div className="flex flex-col w-1/3 " data-testid="shipping-address-summary">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Shipping Address
+                      <strong>Shipping Address</strong>
                     </Text>
-                    <Text className="txt-medium text-ui-fg-subtle">
+                    <Text className="txt-medium text-ui-fg-subtle flex ">
                       {cart.shipping_address.first_name}{" "}
                       {cart.shipping_address.last_name}
                     </Text>
@@ -127,7 +127,7 @@ const Addresses = ({
 
                   <div className="flex flex-col w-1/3 " data-testid="shipping-contact-summary">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Contact
+                      <strong>Contact</strong>
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.shipping_address.phone}
@@ -139,8 +139,8 @@ const Addresses = ({
 
                   <div className="flex flex-col w-1/3" data-testid="billing-address-summary">
                     <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                      Billing Address
-                    </Text>
+
+                      <strong>  Billing Address</strong>    </Text>
 
                     {sameAsSBilling ? (
                       <Text className="txt-medium text-ui-fg-subtle">

@@ -128,7 +128,7 @@ export default async function Footer() {
                     className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
                     href={`/tnc`}
                   >
-                    terms and conditions
+                    Terms and conditions
                   </LocalizedClientLink>
                 </li>
                 <li>
@@ -136,7 +136,7 @@ export default async function Footer() {
                     className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
                     href={`/Support`}
                   >
-                    Connect with us
+                    Contact us
                   </LocalizedClientLink>
                 </li>
               </ul>

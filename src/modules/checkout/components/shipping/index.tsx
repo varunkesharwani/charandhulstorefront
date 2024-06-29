@@ -65,7 +65,7 @@ const Shipping: React.FC<ShippingProps> = ({
 
   return (
     <div className="bg-white">
-      <div className="flex flex-row items-center justify-between mb-6">
+      <div className="flex  items-center justify-between mb-6 md:flex-col">
         <Heading
           level="h2"
           className={clx(
@@ -165,7 +165,7 @@ const Shipping: React.FC<ShippingProps> = ({
           <div className="text-small-regular">
             {cart && cart.shipping_methods.length > 0 && (
               <div className="flex flex-col w-1/3">
-                <Text className="txt-medium-plus text-ui-fg-base mb-1">
+                <Text className="txt-medium-plus text-ui-fg-base mb-1 flex-col">
                   Method
                 </Text>
                 <Text className="txt-medium text-ui-fg-subtle">

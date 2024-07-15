@@ -3,7 +3,7 @@ import React, { MouseEvent } from "react"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { BiArrowBack } from "react-icons/bi"
-
+import Link from 'next/link'
 const HeroBanner: React.FC = () => {
   return (
     <div className="w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
@@ -43,9 +43,9 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="First Image"
             />
-            <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+            <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
-            </div>
+            </Link>
           </div>
 
           <div>
@@ -54,9 +54,9 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="Second Image"
             />
-            <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+            <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
-            </div>
+            </Link>
           </div>
 
           <div>
@@ -65,9 +65,9 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="Third Image"
             />
-            <div className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+           <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
-            </div>
+            </Link>
           </div>
         </Carousel>
       </div>

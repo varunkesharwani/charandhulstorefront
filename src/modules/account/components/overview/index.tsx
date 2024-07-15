@@ -101,6 +101,15 @@ const Overview = ({ customer, orders }: OverviewProps) => {
           </div>
         </div>
       </div>
+       <LocalizedClientLink href="/cart">
+          <Button
+            variant="secondary"
+            className="h-10 w-full  bg-[#ffc600] hover:bg-[#ffc600]/40 text-black"
+            data-testid="sign-in-button"
+          >
+            Open Cart
+          </Button>
+        </LocalizedClientLink>
     </div>
   )
 }

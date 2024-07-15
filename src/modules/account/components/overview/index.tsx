@@ -1,6 +1,7 @@
 import { Customer, Order } from "@medusajs/medusa"
 import { Container } from "@medusajs/ui"
 import { formatAmount } from "@lib/util/prices"
+import { Button, Heading, Text } from "@medusajs/ui"
 
 import ChevronDown from "@modules/common/icons/chevron-down"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"

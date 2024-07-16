@@ -132,7 +132,12 @@ const Support = () => {
         </div>
         <div>
           <div>
-            <h1>EMAILL : <strong> <p>team@charandhul.com</p></strong></h1>
+          <h1>Email: <strong>team@charandhul.com</strong></h1>
+<h1>Whatsapp number: <strong>+91 7004608819</strong></h1>
+<h1>Phone number: <strong>+91 9589474995</strong></h1>
+<h1>Address: <strong>Plumeria Garden Estate, Omicron 3, Greater Noida, UP, 201310</strong></h1>
+
+
 
 
           </div>

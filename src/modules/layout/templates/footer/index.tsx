@@ -112,7 +112,7 @@ export default async function Footer() {
                 </ul>
               </div>
             )}
-            <div className="flex flex-col gap-y-2">
+            {/* <div className="flex flex-col gap-y-2">
               <span className="txt-small-plus txt-ui-fg-base  md:font-semibold  md:text-xl">CharanDhull</span>
               <ul className="grid grid-cols-1 gap-y-2 text-[#023047]  txt-small">
                 <li>
@@ -137,6 +137,76 @@ export default async function Footer() {
                     href={`/Support`}
                   >
                     Contact us
+                  </LocalizedClientLink>
+                </li>
+              </ul>
+            </div> */}
+            <div className="flex flex-col gap-y-2">
+              <span className="txt-small-plus txt-ui-fg-base  md:font-semibold  md:text-xl">KnowMore</span>
+              <ul className="grid grid-cols-1 gap-y-2 text-[#023047]  txt-small">
+                <li>
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/aboutus`}
+                  >
+                    About us
+                  </LocalizedClientLink>
+                </li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/PrivacyPolicy`}
+                  >
+                    Privacy policy
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/tnc`}
+                  >
+                    Terms and conditions
+                  </LocalizedClientLink>
+                </li>
+             
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/ShippingPolicy`}
+                  >
+                    Shipping Policy
+                  </LocalizedClientLink>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <span className="txt-small-plus txt-ui-fg-base  md:font-semibold  md:text-xl">Help</span>
+              <ul className="grid grid-cols-1 gap-y-2 text-[#023047]  txt-small">
+              
+             
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/support`}
+                  >
+                    Contact Us
+                  </LocalizedClientLink>
+                </li>
+{/*                 
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/Support`}
+                  >
+                    Return And Exchange
+                  </LocalizedClientLink>
+                </li> */}
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
+                    href={`/FAQ`}
+                  >
+                    Faq
                   </LocalizedClientLink>
                 </li>
               </ul>

@@ -1,26 +1,31 @@
 import React from 'react';
 import logo from '../../../../../public/logo.png'; // Update the path as per your project structure
 
-const Page = () => {
+const page = () => {
   return (
-    <div className="  text-black font-sans p-5">
+    <div className="text-black font-sans p-5">
       <header className="flex items-center mb-5">
+        {/* Uncomment and update the path to use the logo image */}
         {/* <img src={logo.src} alt="Charandhul Logo" className="h-24 mr-5" /> */}
-        <h1 className="text-[#023047]  text-4xl">Charandhul</h1>
+        <h1 className="text-[#023047] text-4xl font-bold">Charandhul</h1>
       </header>
-      <section className="border p-5 mb-5">
+      <section className="p-5 border mb-5">
+        <h2 className="text-2xl mb-2 font-semibold">Our Story</h2>
         <p>
-          We at Charandhul make lifestyle products that elevate your day-to-day living experience. We created a series of Brass, Copper, and Clay products ranging from kitchen to garden and from your corporate meetings to family gatherings. Our products and services help you heal through health, hygiene, and spirituality. All our products are manufactured by families pursuing these professions for generations. We work to bring the fast-moving urban India closer to its counterpart.
+          Starting Charandhul isn&apos;t a single story, but the result of hundreds of different adventures and failed attempts at different ventures. A bunch of friends met in college, and from the very first day, it was evident that there was going to be chaos and disruption of the pre-established norms.
         </p>
-      </section>
-      <section className=" p-5 border ">
-        <h2 className="text-2xl mb-2">Vision</h2>
         <p>
-          &lsquo;What you can dream is what you can get&lsquo. We at Charandhul believe in this motto and dream of creating an ecosystem that has deep-rooted cores, which values our traditions and is connected with our glorious past. The goal is to help grow India as a nation-state by providing everyone with pure and pious products that will not only benefit them but also supply oxygen to the dying cultures and urban villages.
+          We started college a little late due to COVID, but whatever time we got, we made sure to make the most of it. We started an organisation called &apos;SAMPDA&apos; at our university, which grew so big with time that we could never have guessed. We started doing events, which started with 20 to 2000 people attending at once.
+        </p>
+        <p>
+          From fighting to get more things for students to organizing massive, crazy college trips for money, with time we kept growing. Swiftly, our aims got more aspirational, and we tried our luck at multiple different businesses. Some of them failed and some of them thrived, but all of them taught us a little about market needs and how to satisfy them.
+        </p>
+        <p>
+          So one fine day, on a short trip to Mathura, we not only got the idea to do something to promote our culture and help our people, but kind Madhav also gave us the product, company name, and way to go about it.
         </p>
       </section>
     </div>
   );
 };
 
-export default Page;
+export default page;

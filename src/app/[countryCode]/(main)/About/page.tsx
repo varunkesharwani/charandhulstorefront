@@ -304,9 +304,10 @@ const About = () => {
       <section className="container mx-auto py-10 px-4">
         <div className="text-center pb-12">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-            Built-in fraud protection.
+            Our Story
           </h2>
-          <p className="mt-4 text-lg sm:text-xl">
+          </div>
+          {/* <p className="mt-4 text-lg sm:text-xl">
             Use customer data to build great and solid product experiences that convert.
           </p>
         </div>
@@ -410,11 +411,11 @@ const About = () => {
               height={37}
             />
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="py-20 relative" style={{ backgroundImage: 'linear-gradient(180deg, #FFEEDE 50%, #fff 100%)' }} ref={ref}>
-        <motion.div
+        {/* <motion.div
           className="absolute z-0 bottom-[60%] left-[60%] w-auto hidden sm:block"
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
@@ -467,9 +468,9 @@ const About = () => {
             width={100}
             height={100}
           />
-        </motion.div>
+        </motion.div> */}
 
-        <div className="container mx-auto text-center w-full md:w-3/5">
+        {/* <div className="container mx-auto text-center w-full md:w-3/5">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <div key={index} className="p-8">
@@ -479,16 +480,16 @@ const About = () => {
               </div>
             ))}
           </Slider>
-        </div>
+        </div> */}
 
-        <div className="container mx-auto mt-10 flex flex-wrap justify-center space-x-0 sm:space-x-10">
+        {/* <div className="container mx-auto mt-10 flex flex-wrap justify-center space-x-0 sm:space-x-10">
           <Image src={clientSpotify} alt="Spotify" className="m-2" width={100} height={33} />
           <Image src={clientNike} alt="Nike" className="m-2" width={65} height={23} />
           <Image src={clientAmd} alt="AMD" className="m-2" width={75} height={17} />
           <Image src={clientApper} alt="Apper" className="m-2" width={74} height={59} />
           <Image src={clientLogitech} alt="Logitech" className="m-2" width={85} height={25} />
           <Image src={clientLevis} alt="Levi's" className="m-2" width={74} height={36} />
-        </div>
+        </div> */}
       </section>
     </div>
   );

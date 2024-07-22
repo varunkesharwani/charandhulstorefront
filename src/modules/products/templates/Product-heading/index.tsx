@@ -2,11 +2,11 @@ import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import { Heading, Text } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
-type ProductInfoProps = {
+type ProductHeadProps = {
   product: PricedProduct
 }
 
-const ProductHeading = ({ product }: ProductInfoProps) => {
+const ProductHeading = ({ product }: ProductHeadProps) => {
   return (
     <div id="product-info">
       <div className="flex flex-col  mx-auto">

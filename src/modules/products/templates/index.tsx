@@ -13,7 +13,7 @@ import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
-import ProductHeading from "./product-heading"
+import ProductHeading from "./Product-heading"
 type ProductTemplateProps = {
   product: PricedProduct
   region: Region

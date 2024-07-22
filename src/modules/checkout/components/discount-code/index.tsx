@@ -2,6 +2,7 @@
 
 import { InformationCircleSolid } from "@medusajs/icons"
 import { Cart } from "@medusajs/medusa"
+import { useState } from "react";
 import { Heading, Label, Text, Tooltip } from "@medusajs/ui"
 import React, { useMemo } from "react"
 import { useFormState } from "react-dom"
@@ -25,7 +26,7 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const { discounts, gift_cards, region } = cart
-
+  const [currentCart, setCurrentCart] = useState(cart)
   const appliedDiscount = useMemo(() => {
     if (!discounts || !discounts.length) {
       return undefined
@@ -50,7 +51,16 @@ const DiscountCode: React.FC<DiscountCodeProps> = ({ cart }) => {
   }
 
   const removeDiscountCode = async () => {
-    await removeDiscount(discounts[0].code)
+    if (discounts.length > 0) {
+      const discountCode = discounts[0].code
+      await removeDiscount(discountCode)
+      setCurrentCart({
+        ...currentCart,
+        discounts: []
+      })
+    } else {
+      console.error("No discount code to remove.")
+    }
   }
 
   const [message, formAction] = useFormState(submitDiscountForm, null)

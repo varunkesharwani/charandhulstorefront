@@ -130,7 +130,7 @@ const Addresses = ({
                       <strong>Contact</strong>
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
-                      {cart.shipping_address.phone}
+                      {cart.shipping_address.phone}{" "}
                     </Text>
                     <Text className="txt-medium text-ui-fg-subtle">
                       {cart.email}

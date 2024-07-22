@@ -3,9 +3,9 @@ import { InformationCircleSolid } from "@medusajs/icons"
 import { PaymentSession } from "@medusajs/medusa"
 import { Text, Tooltip, clx } from "@medusajs/ui"
 import React from "react"
-
+import Image from 'next/image'
 import Radio from "@modules/common/components/radio"
-
+import PayImg from "../../../../../public/web-payments.png";
 import PaymentTest from "../payment-test"
 
 type PaymentContainerProps = {
@@ -24,7 +24,16 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
   const isDevelopment = process.env.NODE_ENV === "development"
 
   return (
-    <>
+    <><div className="px-2">
+      <span className="text-lg font-semibold pb-5 text-blue-600">100% Payment Protection, Easy Return Policy</span>
+     <Image
+      src={PayImg}
+      width={500}
+      height={500}
+      alt="Picture of the author"
+    />
+    </div>
+      
       <RadioGroup.Option
         key={paymentSession.id}
         value={paymentSession.provider_id}

@@ -121,12 +121,13 @@ const BillingAddress = ({
           onChange={handleChange}
           data-testid="billing-province-input"
         />
-        <Input
+       <Input
           label="Phone"
           name="billing_address.phone"
           autoComplete="tel"
           value={formData["billing_address.phone"]}
           onChange={handleChange}
+          required
           data-testid="billing-phone-input"
         />
       </div>

@@ -9,6 +9,7 @@ import { CheckCircleSolid, CreditCard } from "@medusajs/icons"
 import { Button, Container, Heading, Text, Tooltip, clx } from "@medusajs/ui"
 import { CardElement } from "@stripe/react-stripe-js"
 import { StripeCardElementOptions } from "@stripe/stripe-js"
+import Image from 'next/image'
 
 import Divider from "@modules/common/components/divider"
 import Spinner from "@modules/common/icons/spinner"
@@ -130,6 +131,7 @@ const Payment = ({
             </button>
           </Text>
         )}
+        <div>  </div>
       </div>
       <div>
         <div className={isOpen ? "block" : "hidden"}>

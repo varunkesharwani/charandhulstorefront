@@ -179,10 +179,13 @@ const ShippingAddress = ({
         />
         <Input
           label="Phone"
+          type="tel"  
           name="shipping_address.phone"
           autoComplete="tel"
           value={formData["shipping_address.phone"]}
           onChange={handleChange}
+          required    
+          
           data-testid="shipping-phone-input"
         />
       </div>

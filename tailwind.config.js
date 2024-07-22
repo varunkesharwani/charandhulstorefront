@@ -12,6 +12,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderRadius: {
+        'custom': '13px',
+      },
+      boxShadow: {
+        'custom': '20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff',
+      },
       transitionProperty: {
         width: "width margin",
         height: "height",

@@ -5,6 +5,13 @@ import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import Back from "@modules/common/icons/back"
 import FastDelivery from "@modules/common/icons/fast-delivery"
 import Refresh from "@modules/common/icons/refresh"
+import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
+import { Heading, Text } from "@medusajs/ui";
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+
+type ProductInfoProps = {
+  product: PricedProduct;
+};
 
 import Accordion from "./accordion"
 
@@ -14,6 +21,10 @@ type ProductTabsProps = {
 
 const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = [
+    {
+      label: "Description",
+      component: <ProductInfo product={product} />,
+    },
     {
       label: "Product Information",
       component: <ProductInfoTab product={product} />,
@@ -123,5 +134,39 @@ const ShippingInfoTab = () => {
     </div>
   )
 }
+
+
+
+
+const ProductInfo = ({ product }: ProductInfoProps) => {
+  // Split the description into points
+  const descriptionPoints = (product.description ?? '').split('.').filter(point => point.trim() !== '');
+
+  return (
+    <div id="product-info">
+      <div className="flex flex-col mx-auto pt-5">
+    
+
+        <ul className="list-disc list-inside text-medium text-ui-fg-subtle" data-testid="product-description">
+          {descriptionPoints.map((point, index) => {
+            const trimmedPoint = point.trim();
+            const boldTextMatch = trimmedPoint.match(/^\*\*\*(.*)/);
+
+            return (
+              <li key={index} className="my-4">
+                {boldTextMatch ? (
+                  <span className="font-bold">{boldTextMatch[1].trim()}</span>
+                ) : (
+                  trimmedPoint
+                )}.
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 
 export default ProductTabs

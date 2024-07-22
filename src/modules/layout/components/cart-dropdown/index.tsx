@@ -5,7 +5,7 @@ import { Cart } from "@medusajs/medusa"
 import { Button } from "@medusajs/ui"
 import { useParams, usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
-import { ShoppingBag } from "@medusajs/icons"
+
 import { formatAmount } from "@lib/util/prices"
 import DeleteButton from "@modules/common/components/delete-button"
 import LineItemOptions from "@modules/common/components/line-item-options"
@@ -79,13 +79,10 @@ const CartDropdown = ({
       <Popover className="relative h-full">
         <Popover.Button className="h-full">
           <LocalizedClientLink
-            className="hover:text-ui-fg-base"
+            className="bg-[#032A3E] text-white p-2 rounded-full px-4 py-2"
             href="/cart"
             data-testid="nav-cart-link"
-          >
-            
-          <div className="flex flex-row text-[#023047] w-9"><ShoppingBag /> {`(${totalItems})`}</div>  
-          </LocalizedClientLink>
+          >{`Cart (${totalItems})`}</LocalizedClientLink>
         </Popover.Button>
         <Transition
           show={cartDropdownOpen}
@@ -99,14 +96,11 @@ const CartDropdown = ({
         >
           <Popover.Panel
             static
-            className="hidden small:block absolute top-[calc(100%+1px)] right-0 rounded-sm bg-white border-x border-b border-gray-200 w-[420px] text-black"
+            className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[420px] text-ui-fg-base"
             data-testid="nav-cart-dropdown"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi flex">
-                {" "}
-                <ShoppingBag /> Cart{" "}
-              </h3>
+              <h3 className="text-large-semi">Shopping Cart</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
@@ -131,7 +125,7 @@ const CartDropdown = ({
                           <div className="flex flex-col flex-1">
                             <div className="flex items-start justify-between">
                               <div className="flex flex-col overflow-ellipsis whitespace-nowrap mr-4 w-[180px]">
-                                <h3 className=" overflow-hidden text-black">
+                                <h3 className="text-base-regular overflow-hidden text-ellipsis">
                                   <LocalizedClientLink
                                     href={`/products/${item.variant.product.handle}`}
                                     data-testid="product-link"
@@ -162,7 +156,7 @@ const CartDropdown = ({
                           </div>
                           <DeleteButton
                             id={item.id}
-                            className="mt-1"
+                            className="mt-1 text-sm"
                             data-testid="cart-item-remove-button"
                           >
                             Remove
@@ -173,7 +167,7 @@ const CartDropdown = ({
                 </div>
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
                   <div className="flex items-center justify-between">
-                    <span className="text-black font-semibold">
+                    <span className="text-ui-fg-base font-semibold">
                       Subtotal{" "}
                       <span className="font-normal">(excl. taxes)</span>
                     </span>
@@ -190,20 +184,19 @@ const CartDropdown = ({
                     </span>
                   </div>
                   <LocalizedClientLink href="/cart" passHref>
-                    <Button
-                      className="w-full"
-                      size="large"
+                    <button
+                      className="w-full h-10 text-white bg-[#032A3E] uppercase text-xs"
                       data-testid="go-to-cart-button"
                     >
                       Go to cart
-                    </Button>
+                    </button>
                   </LocalizedClientLink>
                 </div>
               </>
             ) : (
               <div>
                 <div className="flex py-16 flex-col gap-y-4 items-center justify-center">
-                  <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full ">
+                  <div className="bg-[#032A3E] text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
                   <span>Your shopping bag is empty.</span>
@@ -211,7 +204,12 @@ const CartDropdown = ({
                     <LocalizedClientLink href="/store">
                       <>
                         <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <button
+                          onClick={close}
+                          className="w-full h-10 text-white bg-[#032A3E] uppercase text-xs px-2"
+                        >
+                          Explore products
+                        </button>
                       </>
                     </LocalizedClientLink>
                   </div>

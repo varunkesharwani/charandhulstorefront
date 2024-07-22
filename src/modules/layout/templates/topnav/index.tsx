@@ -3,7 +3,7 @@ import React from "react"
 
 export const TopHeader: React.FC = () => {
   return (
-    <div className="w-full overflow-hidden text-[#ffb703] bg-[#023047f8] ">
+    <div className="w-full overflow-hidden text-white bg-[#023047f8] ">
       <div className="revolving-text-wrapper">
         <div className="revolving-text">
           <span>Free Shipping Above 5000</span>

@@ -6,7 +6,7 @@ const SignInPrompt = () => {
     <div className="bg-white flex items-center justify-between">
       <div>
         <Heading level="h2" className="txt-xlarge">
-          Already have an account?
+          Please Sign in to Continue
         </Heading>
         <Text className="txt-medium text-ui-fg-subtle">
          Please sign in to continue with your order.

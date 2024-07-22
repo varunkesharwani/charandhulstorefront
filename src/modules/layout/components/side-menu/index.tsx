@@ -121,7 +121,7 @@ const SideMenuItems = {
   About: "/About",
 
   Account: "/account",
-  Contact: "/contact",
+  Contact: "/Contactus",
 }
 
 const SideMenu = ({ regions }: { regions: Region[] | null }) => {

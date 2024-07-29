@@ -330,8 +330,8 @@ const About = () => {
         <div className=" mb-4 list-none text-center font-medium ">
           <h3 className="text-xl mb-3 font-medium" >Cooking in brass</h3>
           <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
-          <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
-          <h3>And Eating in Kansa</h3>
+          <h3 className="text-xl mb-3 font-medium" > Eating in Kansa</h3>
+         
         </div>
         <p className="text-center  text-2xl">
           One product at a time.

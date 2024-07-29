@@ -250,7 +250,7 @@ const About = () => {
   return (
     <div className="overflow-hidden">
       <section className="text-center md:py-10 py-3 border-b-black bg-white to-white">
-        <h1 className="text-[62.5px]   font-be-vietnam-pro font-bold">About</h1>
+        <p className="text-[62.5px]   font-be-vietnam-pro font-bold">About Us</p   >
         <p className="text-[20.5px]   font-be-vietnam-pro leading-20 text-gray-400">Unleashing our clients’ potential by maximizing innovation.</p>
       </section>
       <hr />
@@ -301,11 +301,42 @@ const About = () => {
           className="font-display text-center text-[48px] md:text-[96px] lg:text-[184.5px] text-[#6c77f4] font-be-vietnam-pro  font-bold tracking-[-0.02em]  "
         /> */}
       </section>
-      <section className="container mx-auto py-10 px-4">
+      <section className="">
         <div className="text-center pb-12">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
             Our Story
           </h2>
+          <section className=" bg-white  mb-6 md:px-10 px-1 pt-10 ">
+        
+        <p className="leading-7 mb-4">
+          Starting Charandhul isn&apos;t a single story, but the result of hundreds of different adventures and failed attempts at different ventures. A bunch of friends met in college, and from the very first day, it was evident that there was going to be chaos and disruption of the pre-established norms.
+        </p>
+        <p className="leading-7 mb-4">
+          We started college a little late due to COVID, but whatever time we got, we made sure to make the most of it. We started an organisation called &apos;SAMPDA&apos; at our university, which became so big with time that we could never have guessed. We started doing events, which grew from 20 to 2000 people attending at once.
+        </p>
+        <p className="leading-7 mb-4">
+          From fighting to get more things for students to organising massive, crazy college trips for money, with time we kept growing. Swiftly, our aims got more aspirational, and we tried our luck at multiple different businesses. Some of them failed and some of them thrived, but all of them taught us a little about market needs and how to satisfy them.
+        </p>
+        <p className="leading-7 mb-4">
+          So one fine day, on a short trip to Mathura, we not only got the idea to do something to promote our culture and help our people, but kind Madhav also gave us the product, company name, and way to go about it and that&apos;s how Charandhul happened.
+        </p>
+        <h3 className="text-xl mb-3 font-medium">Dream at Delhi</h3>
+        <h3 className="text-xl mb-3 font-medium">Inspired at Mathura</h3>
+        <h3 className="text-xl mb-3 font-medium">Made at Moradabad</h3>
+        <h3 className="text-2xl text-blue-600/100  mb-3 font-medium">Available at भारत</h3>
+        <p className="leading-7 mb-4 pt-4 text-2xl text-orange-600 font-bold" >
+          Helping India to go back at:
+        </p>
+        <div className=" mb-4 list-none text-center font-medium ">
+          <h3 className="text-xl mb-3 font-medium" >Cooking in brass</h3>
+          <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
+          <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
+          <h3>And Eating in Kansa</h3>
+        </div>
+        <p className="text-center  text-2xl">
+          One product at a time.
+        </p>
+      </section>
           </div>
           {/* <p className="mt-4 text-lg sm:text-xl">
             Use customer data to build great and solid product experiences that convert.

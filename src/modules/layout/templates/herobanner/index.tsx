@@ -20,7 +20,7 @@ const HeroBanner: React.FC = () => {
           ) => (
             <div
               onClick={clickHandler}
-              className="absolute right-[31px] md:right-[51px] bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#9C6644] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+              className="absolute right-[31px] md:right-[51px] bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#032a3e] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
               <BiArrowBack className="text-sm md:text-lg" />
             </div>
@@ -31,7 +31,7 @@ const HeroBanner: React.FC = () => {
           ) => (
             <div
               onClick={clickHandler}
-              className="absolute right-0 bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#9C6644] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+              className="absolute right-0 bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#032a3e] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
               <BiArrowBack className="rotate-180 text-sm md:text-lg" />
             </div>
@@ -43,7 +43,7 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="First Image"
             />
-            <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#032a3e] absolute bottom-[25px] md:bottom-[75px] left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
             </Link>
           </div>
@@ -54,7 +54,7 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="Second Image"
             />
-            <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#032a3e] absolute bottom-[25px] md:bottom-[75px] left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
             </Link>
           </div>
@@ -65,7 +65,7 @@ const HeroBanner: React.FC = () => {
               className="w-full h-full object-contain"
               alt="Third Image"
             />
-           <Link href={`/store`}  className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#9C6644] absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#032a3e] absolute bottom-[25px] md:bottom-[75px] left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
               Shop now
             </Link>
           </div>
@@ -84,7 +84,7 @@ const HeroBanner: React.FC = () => {
           ) => (
             <div
               onClick={clickHandler}
-              className="absolute right-[31px] md:right-[51px] bottom-0 w-[30px]  md:w-[50px] h-[30px] md:h-[50px] bg-[#9C6644] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+              className="absolute right-[31px] md:right-[51px] bottom-0 w-[30px]  md:w-[50px] h-[30px] md:h-[50px] bg-[#032a3e] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
               <BiArrowBack className="text-sm md:text-lg" />
             </div>
@@ -95,7 +95,7 @@ const HeroBanner: React.FC = () => {
           ) => (
             <div
               onClick={clickHandler}
-              className="absolute right-0 bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#9C6644] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+              className="absolute right-0 bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-[#032a3e] z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
               <BiArrowBack className="rotate-180 text-sm md:text-lg" />
             </div>
@@ -107,7 +107,9 @@ const HeroBanner: React.FC = () => {
               className=" md:h-96  md:aspect-auto object-cover "
               alt="First Image"
             />
-         
+            <Link href={`/store`} className="px-[15px] md:px-[20px] py-[10px] md:py-[10px] font-oswald bg-[#032a3e] absolute bottom-[25px] ] left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+              Shop now
+            </Link>
           </div>
 
           <div>
@@ -116,7 +118,9 @@ const HeroBanner: React.FC = () => {
               className=" md:h-96 aspect-[16/10] md:aspect-auto object-cover"
               alt="Second Image"
             />
-           
+            <Link href={`/store`} className="px-[15px] md:px-[20px] py-[10px] md:py-[10px] font-oswald bg-[#032a3e] absolute bottom-[25px]  left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+              Shop now
+            </Link>
           </div>
 
           <div>
@@ -125,7 +129,9 @@ const HeroBanner: React.FC = () => {
               className=" md:h-96 aspect-[16/10] md:aspect-auto object-cover"
               alt="Third Image"
             />
-           
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[10px] font-oswald bg-[#032a3e] absolute bottom-[25px]  left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+              Shop now
+            </Link>
           </div>
         </Carousel>
       </div>

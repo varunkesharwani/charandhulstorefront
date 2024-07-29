@@ -168,7 +168,7 @@
 //                     Terms and conditions
 //                   </LocalizedClientLink>
 //                 </li>
-             
+
 //                 <li>
 //                   <LocalizedClientLink
 //                     className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
@@ -182,8 +182,8 @@
 //             <div className="flex flex-col gap-y-2">
 //               <span className="txt-small-plus txt-ui-fg-base  md:font-semibold  md:text-xl">Help</span>
 //               <ul className="grid grid-cols-1 gap-y-2 text-[#023047]  txt-small">
-              
-             
+
+
 //                 <li>
 //                   <LocalizedClientLink
 //                     className="hover:text-ui-fg-base  md:font-semibold  md:text-xl"
@@ -234,7 +234,7 @@ import { Facebook } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 import Link from "next/link"
-
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
   const { product_categories } = await getCategoriesList(0, 6)
@@ -245,12 +245,12 @@ export default async function Footer() {
         <div className="flex flex-col md:flex-row flex-wrap justify-center py-10 gap-x-10 gap-y-5 md:gap-y-0">
           <div className="flex flex-col gap-y-4 ">
             <span className="text-xs text-gray-500 uppercase font-semibold">
-              Address
+              Charandhul
             </span>
-            <p className="text-xl w-[60%]">
-              Pumeria Garden Estate , Omicron 3, Greater Noida, Uttar Pradesh
+            <p className="text-xl md:w-[60%] w-[90%]">
+              Follow us on social media to get the latest updates and offers
             </p>
-            <div className="relative">
+            {/* <div className="relative">
               <input
                 type="email"
                 name="email"
@@ -261,8 +261,30 @@ export default async function Footer() {
               <button className="w-32 rounded-full text-white bg-green-400 opacity-80 px-3 py-3 text-sm absolute right-0 hover:bg-purple-400 transition-all transform duration-150">
                 Submit
               </button>
+            </div> */}
+            <div className="flex flex-row gap-x-2"> 
+                <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer border-2">
+              <Link href="https://www.facebook.com/sahil.nair.161">
+                <FaFacebookF size={20} />
+              </Link>
             </div>
-          </div>
+              <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer border-2">
+                <Link href="https://x.com/charandhulStore">
+                  {" "}
+                  <FaTwitter size={20} />
+                </Link>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer border-2">
+                <Link href="https://www.youtube.com/channel/UC9dDpmCB-X9RMjHHNZtbBrg">
+                  <FaYoutube size={20} />
+                </Link>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer  border-2">
+                <Link href="https://www.instagram.com/charandhul/">
+                  <FaInstagram size={20} />
+                </Link>
+              </div>
+            </div></div>
           <div className="flex flex-row gap-x-8 mt-10 lg:mt-0">
             <div>
               {product_categories && product_categories?.length > 0 && (
@@ -323,86 +345,86 @@ export default async function Footer() {
             </div>
             <div className="flex flex-col gap-y-2">
               <span className="text-xs text-gray-500 uppercase font-semibold">
-               Get to Know us
+                Get to Know us
               </span>
               <ul className="grid grid-cols-1 gap-y-5 text-[18px] mt-5">
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/ShippingPolicy"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
                     ShippingPolicy
-                  </Link>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/PrivacyPolicy"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
                     PrivacyPolicy
-                  </Link>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/tnc"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
                     Terms & Conditions{" "}
-                  </Link>
+                  </LocalizedClientLink>
                 </li>
-              
+
               </ul>
-              
+
             </div>
             <div className="flex flex-col gap-y-2">
               <span className="text-xs text-gray-500 uppercase font-semibold">
-                  HELP
+                HELP
               </span>
               <ul className="grid grid-cols-1 gap-y-5 text-[18px] mt-5">
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/Contactus"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
                     Contact Us
-                  </Link>
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/FAQ"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
-                  FAQ
-                  </Link>
+                    FAQ
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <Link
+                  <LocalizedClientLink
                     href="/return-exchage"
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
                     Return & Exchange
-                  </Link>
+                  </LocalizedClientLink>
                 </li>
               </ul>
-              
+
             </div>
           </div>
         </div>
         <div className="border-t-[1px] border-gray-200 py-10 px-3 md:px-20 flex justify-between gap-x-5 flex-col mdf:flex-row">
-      <span className="text-lg font-semibold pb-5 text-blue-600 ">100% Payment Protection, Easy Return Policy</span>
-     <Image
-      src={PayImg}
-      width={500}
-      height={500}
-      alt="Picture of the author"
-    />
-    </div>
+          <span className="text-lg font-semibold pb-5 text-blue-600 ">100% Payment Protection, Easy Return Policy</span>
+          <Image
+            src={PayImg}
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+        </div>
         <div className="border-t-[1px] border-gray-200 py-10 px-3 md:px-20 flex justify-between gap-x-5">
 
           <p className="text-gray-400 text-sm">

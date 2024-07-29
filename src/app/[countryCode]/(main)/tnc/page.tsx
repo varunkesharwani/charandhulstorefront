@@ -3,7 +3,7 @@ import logo from '../../../../../public/logo.png'; // Update the path as per you
 
 const Page = () => {
   return (
-    <div className="bg-gray-100 min-h-screen text-gray-800 font-sans pt-5">
+    <div className="bg-gray-100 min-h-screen text-gray-800 font-sans ">
       {/* <header className="bg-blue-600 text-white p-6 shadow-md">
         <div className="container mx-auto flex items-center justify-between">
           {/* Uncomment and update the path to use the logo image */}
@@ -12,7 +12,7 @@ const Page = () => {
         </div>
       </header>  */}
 
-      <main className="container mx-auto p-6 bg-white rounded-lg shadow-md ">
+      <main className="container  bg-white rounded-lg shadow-md md:p-5 p-2">
         <section>
           <h2 className="text-3xl font-semibold mb-4 border-b pb-2 text-[#032A3E]">Terms and Conditions</h2>
           <p className="mb-4">

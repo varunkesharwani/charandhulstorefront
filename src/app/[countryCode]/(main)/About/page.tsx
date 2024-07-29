@@ -333,7 +333,7 @@ const About = () => {
           <h3 className="text-xl mb-3 font-medium" > Eating in Kansa</h3>
          
         </div>
-        <p className="text-center  text-2xl">
+        <p className="text-center  text-2xl pt-5">
           One product at a time.
         </p>
       </section>

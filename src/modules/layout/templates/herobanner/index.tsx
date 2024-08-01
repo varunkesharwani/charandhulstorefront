@@ -232,7 +232,7 @@ const HeroBanner: React.FC = () => {
           ))}
         </Carousel>
       </div>
-      <div className="relative text-white text-[20px] w-full mx-auto md:h-full hidden md:block">
+      <div className="relative text-white text-[20px] w-full mx-auto md:h-[650px] hidden md:block">
         <Carousel
           autoPlay
           infiniteLoop

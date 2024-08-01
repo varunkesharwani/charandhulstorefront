@@ -266,7 +266,7 @@ const HeroBanner: React.FC = () => {
             <div key={index}>
               <Image
                 src={imgSrc}
-                className="h-[450px] md:aspect-auto object-cover"
+                className="h-[450px]  object-cover"
                 alt={`Image ${index + 1}`}
               />
               <Link

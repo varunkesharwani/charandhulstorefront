@@ -138,27 +138,35 @@ const ShippingInfoTab = () => {
 
 
 
-const ProductInfo = ({ product }: ProductInfoProps) => {
+const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   // Split the description into points
   const descriptionPoints = (product.description ?? '').split('.').filter(point => point.trim() !== '');
 
   return (
     <div id="product-info">
       <div className="flex flex-col mx-auto pt-5">
-    
-
         <ul className="list-disc list-inside text-medium text-ui-fg-subtle" data-testid="product-description">
           {descriptionPoints.map((point, index) => {
             const trimmedPoint = point.trim();
-            const boldTextMatch = trimmedPoint.match(/^\*\*\*(.*)/);
+            const boldTextMatch = trimmedPoint.match(/\*\*\*(.*?)\*\*\*/);
+
+            if (boldTextMatch) {
+              const beforeBoldText = trimmedPoint.slice(0, boldTextMatch.index);
+              const boldText = boldTextMatch[1];
+              const afterBoldText = trimmedPoint.slice(boldTextMatch.index! + boldText.length + 6);
+
+              return (
+                <li key={index} className="my-4">
+                  {beforeBoldText}
+                  <span className="font-bold">{boldText}</span>
+                  {afterBoldText}.
+                </li>
+              );
+            }
 
             return (
               <li key={index} className="my-4">
-                {boldTextMatch ? (
-                  <span className="font-bold">{boldTextMatch[1].trim()}</span>
-                ) : (
-                  trimmedPoint
-                )}.
+                {trimmedPoint}.
               </li>
             );
           })}
@@ -168,5 +176,4 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
   );
 };
 
-
-export default ProductTabs
+export default ProductInfo;

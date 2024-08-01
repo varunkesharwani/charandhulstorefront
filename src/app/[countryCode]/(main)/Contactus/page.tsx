@@ -38,9 +38,7 @@ const Page = () => {
         <p className="text-gray-600">
           Mail us:  team@charandhul.com
         </p>
-        <p className="text-gray-600">
-          Operating Hours: Monday to Saturday, 10:00 AM - 7:00 PM
-        </p>
+    
       </main>
     </div>
   );

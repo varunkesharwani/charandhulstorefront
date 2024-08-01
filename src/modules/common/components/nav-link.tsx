@@ -31,9 +31,9 @@ const NavbarLink = ({
       }   hover:bg-gray-50 hover:text-black p-2 rounded-md transition-all transform duration-300 flex`}
     >
       {children}{" "}
-      <span className=" ml-2 text-xs">
+      {/* <span className=" ml-2 text-xs">
         <ChevronDown className="text-xs" />
-      </span>
+      </span> */}
     </Link>
   )
 }

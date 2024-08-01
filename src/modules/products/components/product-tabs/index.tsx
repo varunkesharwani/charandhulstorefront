@@ -76,14 +76,14 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             <span className="font-semibold">Weight</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
           </div>
-          {/* <div>
+          <div>
             <span className="font-semibold">Dimensions in Inch</span>
             <p>
               {product.length && product.width && product.height
                 ? `${product.length}L x ${product.width}W x ${product.height}H`
                 : "-"}
             </p>
-          </div> */}
+          </div>
         </div>
       </div>
       {product.tags?.length ? (
@@ -137,36 +137,27 @@ const ShippingInfoTab = () => {
 
 
 
-
-const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
+const ProductInfo = ({ product }: ProductInfoProps) => {
   // Split the description into points
   const descriptionPoints = (product.description ?? '').split('.').filter(point => point.trim() !== '');
 
   return (
     <div id="product-info">
       <div className="flex flex-col mx-auto pt-5">
+    
+
         <ul className="list-disc list-inside text-medium text-ui-fg-subtle" data-testid="product-description">
           {descriptionPoints.map((point, index) => {
             const trimmedPoint = point.trim();
-            const boldTextMatch = trimmedPoint.match(/\*\*\*(.*?)\*\*\*/);
-
-            if (boldTextMatch) {
-              const beforeBoldText = trimmedPoint.slice(0, boldTextMatch.index);
-              const boldText = boldTextMatch[1];
-              const afterBoldText = trimmedPoint.slice(boldTextMatch.index! + boldText.length + 6);
-
-              return (
-                <li key={index} className="my-4">
-                  {beforeBoldText}
-                  <span className="font-bold">{boldText}</span>
-                  {afterBoldText}.
-                </li>
-              );
-            }
+            const boldTextMatch = trimmedPoint.match(/^\*\*\*(.*)/);
 
             return (
               <li key={index} className="my-4">
-                {trimmedPoint}.
+                {boldTextMatch ? (
+                  <span className="font-bold">{boldTextMatch[1].trim()}</span>
+                ) : (
+                  trimmedPoint
+                )}.
               </li>
             );
           })}
@@ -176,4 +167,5 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
   );
 };
 
-export default ProductInfo;
+
+export default ProductTabs

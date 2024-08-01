@@ -4,6 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { BiArrowBack } from "react-icons/bi"
 import Link from 'next/link'
+import FirstImg from "@/../../public/HomeImg/1.svg"
+import SecondImg from "@/../../public/HomeImg/2.svg"
+import ThirdImg from "@/../../public/HomeImg/3.svg"
+import FourthImg from "@/../../public/HomeImg/4.svg"
+
 const HeroBanner: React.FC = () => {
   return (
     <div className="w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
@@ -39,7 +44,7 @@ const HeroBanner: React.FC = () => {
         >
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369357/3_vo7mbn.png"
+              src={FirstImg}
               className="w-full h-full object-contain"
               alt="First Image"
             />
@@ -50,7 +55,7 @@ const HeroBanner: React.FC = () => {
 
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369357/4_u712tz.png"
+              src={SecondImg}
               className="w-full h-full object-contain"
               alt="Second Image"
             />
@@ -61,7 +66,17 @@ const HeroBanner: React.FC = () => {
 
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369355/2_okdcwx.png"
+              src={ThirdImg}
+              className="w-full h-full object-contain"
+              alt="Third Image"
+            />
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-[#032a3e] absolute bottom-[25px] md:bottom-[75px] left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+              Shop now
+            </Link>
+          </div>
+          <div>
+            <img
+              src={FourthImg}
               className="w-full h-full object-contain"
               alt="Third Image"
             />
@@ -103,7 +118,7 @@ const HeroBanner: React.FC = () => {
         >
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369357/3_vo7mbn.png"
+              src={FirstImg}
               className=" md:h-96  md:aspect-auto object-cover "
               alt="First Image"
             />
@@ -114,7 +129,7 @@ const HeroBanner: React.FC = () => {
 
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369357/4_u712tz.png"
+              src={SecondImg}
               className=" md:h-96 aspect-[16/10] md:aspect-auto object-cover"
               alt="Second Image"
             />
@@ -125,7 +140,18 @@ const HeroBanner: React.FC = () => {
 
           <div>
             <img
-              src="https://res.cloudinary.com/dqjo5hdz0/image/upload/v1714369355/2_okdcwx.png"
+              src={ThirdImg}
+              className=" md:h-96 aspect-[16/10] md:aspect-auto object-cover"
+              alt="Third Image"
+            />
+            <Link href={`/store`} className="px-[15px] md:px-[40px] py-[10px] md:py-[10px] font-oswald bg-[#032a3e] absolute bottom-[25px]  left-0 text-white text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
+              Shop now
+            </Link>
+          </div>
+          
+          <div>
+            <img
+              src={FourthImg}
               className=" md:h-96 aspect-[16/10] md:aspect-auto object-cover"
               alt="Third Image"
             />

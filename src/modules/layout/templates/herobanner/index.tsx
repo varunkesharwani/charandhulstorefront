@@ -4,10 +4,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from "react-responsive-carousel"
 import { BiArrowBack } from "react-icons/bi"
 import Link from 'next/link'
-import FirstImg from "@/../../public/HomeImg/1.svg"
-import SecondImg from "@/../../public/HomeImg/2.svg"
-import ThirdImg from "@/../../public/HomeImg/3.svg"
-import FourthImg from "@/../../public/HomeImg/4.svg"
+import POwer from "../../../../../public/HomeImg/1.svg"
+import FirstImg from "../../../../../public/HomeImg/1.svg"
+import SecondImg from "../../../../../public/HomeImg/2.svg"
+import ThirdImg from "../../../../../public/HomeImg/3.svg"
+import FourthImg from "../../../../../public/HomeImg/4.svg"
 
 const HeroBanner: React.FC = () => {
   return (

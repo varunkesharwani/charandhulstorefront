@@ -112,33 +112,45 @@ export default async function Home({
 
   console.log(collections, "for featured products")
 
-// export default async function Home({
-//   params: { countryCode },
-// }: {
-//   params: { countryCode: string }
-// }) {
-//   const collections = await getCollectionsWithProducts(countryCode)
-//   const region = await getRegion(countryCode)
+  // export default async function Home({
+  //   params: { countryCode },
+  // }: {
+  //   params: { countryCode: string }
+  // }) {
+  //   const collections = await getCollectionsWithProducts(countryCode)
+  //   const region = await getRegion(countryCode)
 
-//   if (!collections || !region) {
-//     return null
-//   }
+  //   if (!collections || !region) {
+  //     return null
+  //   }
 
   return (
     <>
-    <Hero />
-    <div className="py-12 flex flex-col items-center justify-center">
-      <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
+      <Hero />
+      <div className="container mx-auto px-4 md:px-6 md:pt-10 md:mt-7 flex flex-col items-center justify-center text-[#023047]">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
+              Our Copper & Brass Collection
+            </h2>
+            <p className="max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+              Explore our exquisite range of handcrafted copper and brass utensils, perfect for elevating your kitchen experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="py-12 flex flex-col items-center justify-center">
+        {/* <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
         CRAFTED FOR ALL YOUR NEEDS!
-      </h2>
-      <p className="pt-10 max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
-        Shop by Utility
-      </p>
-    </div>
-    <div className="flex justify-center flex-wrap gap-8">
-      <CollectionsGrid collections={allCollections.collections} region={region} />
-    </div>
-    {/* <div className="py-12 flex flex-col items-center justify-center">
+      </h2> */}
+        <p className="pt-10 max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+          Shop by Utility
+        </p>
+      </div>
+      <div className="flex justify-center flex-wrap gap-8">
+        <CollectionsGrid collections={allCollections.collections} region={region} />
+      </div>
+      {/* <div className="py-12 flex flex-col items-center justify-center">
       <p className="max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400 py-10">
         Shop by metal
       </p>
@@ -146,23 +158,23 @@ export default async function Home({
         <MetalsGrid collections={allCollections.collections} region={region} />
       </div>
     </div> */}
-    <div className="container mx-auto px-4 md:px-6 md:pt-10 md:mt-7 flex flex-col items-center justify-center text-[#023047]">
-      <div className="flex flex-col items-center justify-center space-y-4 text-center">
-        <div className="space-y-2">
-          <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
-            Our Copper & Brass Collection
-          </h2>
-          <p className="max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
-            Explore our exquisite range of handcrafted copper and brass utensils, perfect for elevating your kitchen experience.
-          </p>
+      <div className="container mx-auto px-4 md:px-6 md:pt-10 md:mt-7 flex flex-col items-center justify-center text-[#023047]">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
+              Our Copper & Brass Collection
+            </h2>
+            <p className="max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+              Explore our exquisite range of handcrafted copper and brass utensils, perfect for elevating your kitchen experience.
+            </p>
+          </div>
         </div>
-            </div>
-    </div>
-    <div>
-      <ul className="flex flex-col">
-        <FeaturedProducts collections={collections} region={region} />
-      </ul>
-    </div>
-  </>
+      </div>
+      <div>
+        <ul className="flex flex-col">
+          <FeaturedProducts collections={collections} region={region} />
+        </ul>
+      </div>
+    </>
   )
 }

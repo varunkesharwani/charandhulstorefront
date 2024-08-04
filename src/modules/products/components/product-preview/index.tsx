@@ -37,17 +37,28 @@ export default async function ProductPreview({
       href={`/products/${productPreview.handle}`}
       className="group"
     >
-      <div data-testid="product-wrapper">
+      <div data-testid="product-wrapper" className="relative">
+        {cheapestPrice && cheapestPrice.price_type === "sale" && (
+          <div className="absolute z-30 top-3 left-3 bg-[#032a3e] px-2 text-white text-bold rounded-md">
+            -{cheapestPrice.percentage_diff}%
+          </div>
+        )}
         <Thumbnail
           thumbnail={productPreview.thumbnail}
           size="square"
           isFeatured={isFeatured}
         />
-        <div className="flex flex-col txt-compact-medium mt-4 ">
-          <Text className="text-ui-fg-subtle md:font-semibold  md:text-xl" data-testid="product-title">{productPreview.title}</Text>
-          <div className="flex items-center gap-x-2  text-ui-fg-subtle md:font-semibold  md:text-xl">
+        <div className="flex flex-col txt-compact-medium mt-4 justify-between space-y-1">
+          <Text
+            className="text-sm md:font-semibold md:text-sm"
+            data-testid="product-title"
+          >
+            {productPreview.title}
+          </Text>
+          <div className="flex items-center gap-x-2   flex-row text-sm md:font-semibold md:text-sm justify-between">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
+          {/* <ProductActionsWrapper id={product.id} region={region} /> */}
         </div>
       </div>
     </LocalizedClientLink>

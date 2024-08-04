@@ -10,10 +10,12 @@ export type FeaturedProduct = {
 }
 
 export type ProductPreviewType = {
+ 
   id: string
   title: string
   handle: string | null
   thumbnail: string | null
+  metadata: Record<string, unknown>;
   created_at?: Date
   price?: {
     calculated_price: string
@@ -22,7 +24,27 @@ export type ProductPreviewType = {
     price_type: "default" | "sale"
   }
   isFeatured?: boolean
+ 
 }
+export type ProductPreviewTypeZ = {
+  id: string;
+  title: string;
+  handle: string | null;
+  thumbnail: string | null;
+  metadata: {
+    hidden?: string;
+    [key: string]: unknown; // Allows additional metadata fields
+  };
+  created_at?: Date;
+  price?: {
+    calculated_price: string;
+    original_price: string;
+    difference: string;
+    price_type: "default" | "sale";
+  };
+  isFeatured?: boolean;
+};
+
 
 export type ProductCollectionWithPreviews = Omit<
   ProductCollection,

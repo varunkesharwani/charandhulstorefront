@@ -73,27 +73,27 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                                 </div>
                             </div>
                             <div className="flex flex-col justify-between md:hidden">
-    <div className="flex flex-col md:flex-row md:justify-between">
-      <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-        <FaShippingFast className="md:mr-2" />
-        <p className="text-base pl-5">Free Shipping</p>
-      </div>
-      <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-        <MdTimeline className="md:mr-2" />
-        <p className="text-base pl-5">Delivery timeline 7-10 days</p>
-      </div>
-    </div>
-    <div className="flex flex-col md:flex-row md:justify-between">
-      <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-        <FaExchangeAlt className="md:mr-2" />
-        <p className="text-base pl-5">Easy 7-days exchange</p>
-      </div>
-      <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-        <FaShieldAlt className="md:mr-2" />
-        <p className="text-base pl-5">Lifetime warranty</p>
-      </div>
-    </div>
-  </div>
+                                <div className="flex flex-col md:flex-row md:justify-between">
+                                    <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
+                                        <FaShippingFast className="md:mr-2" />
+                                        <p className="text-base pl-5">Free Shipping</p>
+                                    </div>
+                                    <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
+                                        <MdTimeline className="md:mr-2" />
+                                        <p className="text-base pl-5">Delivery timeline 7-10 days</p>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col md:flex-row md:justify-between">
+                                    <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
+                                        <FaExchangeAlt className="md:mr-2" />
+                                        <p className="text-base pl-5">Easy 7-days exchange</p>
+                                    </div>
+                                    <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
+                                        <FaShieldAlt className="md:mr-2" />
+                                        <p className="text-base pl-5">Lifetime warranty</p>
+                                    </div>
+                                </div>
+                            </div>
                             <ProductTabs product={product} />
                         </div>
                     </Suspense>

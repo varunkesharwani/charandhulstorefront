@@ -2,6 +2,7 @@
 // import { ProductPreviewTypeZ } from "types/global";
 // import { retrievePricedProductById } from "@lib/data";
 // import { getProductPrice } from "@lib/util/get-product-price";
+// import ProductActions from "@modules/products/components/product-actions";
 // import { Region } from "@medusajs/medusa";
 // import LocalizedClientLink from "@modules/common/components/localized-client-link";
 // import Thumbnail from "../thumbnail";
@@ -17,7 +18,6 @@
 //   region: Region;
 // }) {
 //   // Log the product metadata
-//   console.log("Product Metadata:", productPreview.metadata);
 
 //   // Filter out hidden products
 //   if (productPreview.metadata?.hidden === "true") {
@@ -44,14 +44,17 @@
 //       className="group"
 //     >
 //       <div data-testid="product-wrapper">
+        
+
+        
 //         <Thumbnail
 //           thumbnail={productPreview.thumbnail}
 //           size="square"
 //           isFeatured={isFeatured}
 //         />
-//         <div className="flex txt-compact-medium mt-4 justify-between">
+//         <div className="flex flex-col txt-compact-medium mt-4 justify-between">
 //           <Text
-//             className="text-ui-fg-subtle md:font-semibold md:text-xl"
+//             className="text-sm md:font-semibold md:text-sm"
 //             data-testid="product-title"
 //           >
 //             {productPreview.title}
@@ -59,6 +62,7 @@
 //           <div className="flex items-center gap-x-2 text-ui-fg-subtle md:font-semibold md:text-xl">
 //             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
 //           </div>
+//           {/* <ProductActionsWrapper id={product.id} region={region} /> */}
 //         </div>
 //       </div>
 //     </LocalizedClientLink>
@@ -67,10 +71,12 @@
 
 
 
+
 import { Text } from "@medusajs/ui";
 import { ProductPreviewTypeZ } from "types/global";
 import { retrievePricedProductById } from "@lib/data";
 import { getProductPrice } from "@lib/util/get-product-price";
+import ProductActions from "@modules/products/components/product-actions";
 import { Region } from "@medusajs/medusa";
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
 import Thumbnail from "../thumbnail";
@@ -111,22 +117,28 @@ export default async function ProductPreviewStore({
       href={`/products/${productPreview.handle}`}
       className="group"
     >
-      <div data-testid="product-wrapper">
+      <div data-testid="product-wrapper" className="relative">
+        {cheapestPrice && cheapestPrice.price_type === "sale" && (
+          <div className="absolute z-30 top-3 left-3 bg-[#032a3e] px-2 text-white text-bold rounded-md">
+            -{cheapestPrice.percentage_diff}%
+          </div>
+        )}
         <Thumbnail
           thumbnail={productPreview.thumbnail}
           size="square"
           isFeatured={isFeatured}
         />
-        <div className="flex txt-compact-medium mt-4 justify-between">
+        <div className="flex flex-col txt-compact-medium mt-4 justify-between space-y-1">
           <Text
-            className="text-ui-fg-subtle md:font-semibold md:text-xl"
+            className="text-sm md:font-semibold md:text-sm"
             data-testid="product-title"
           >
             {productPreview.title}
           </Text>
-          <div className="flex items-center gap-x-2 text-ui-fg-subtle md:font-semibold md:text-xl">
+          <div className="flex items-center gap-x-2  md:font-semibold md:text-xl flex-row text-sm md:font-semibold md:text-sm justify-between">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
+          {/* <ProductActionsWrapper id={product.id} region={region} /> */}
         </div>
       </div>
     </LocalizedClientLink>

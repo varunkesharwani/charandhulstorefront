@@ -47,7 +47,7 @@ const SearchResultsTemplate = ({
               <PaginatedProducts
                 productsIds={ids}
                 sortBy={sortBy}
-                page={pageNumber}
+            //    page={pageNumber}
                 countryCode={countryCode}
               />
             </div>

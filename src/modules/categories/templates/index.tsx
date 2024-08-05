@@ -68,7 +68,7 @@ export default function CategoryTemplate({
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sortBy || "created_at"}
-            page={pageNumber}
+            // page={pageNumber}
             categoryId={category.id}
             countryCode={countryCode}
           />

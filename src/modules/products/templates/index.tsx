@@ -86,7 +86,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                                 <div className="flex flex-col md:flex-row md:justify-between">
                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
                                         <FaExchangeAlt className="md:mr-2" />
-                                        <p className="text-base pl-5">Easy 7-days exchange</p>
+                                        <p className="text-base pl-5">Easy 7-days Exchange</p>
                                     </div>
                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
                                         <FaShieldAlt className="md:mr-2" />

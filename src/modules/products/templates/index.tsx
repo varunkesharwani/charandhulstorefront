@@ -54,7 +54,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                                 <div className="flex flex-col md:flex-row md:justify-between space-y-2">
                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
                                         <FaShippingFast className="md:mr-2" />
-                                        <p className="text-base pl-3">Free Shipping above 5000</p>
+                                        <p className="text-base pl-3">Free Shipping </p>
                                     </div>
                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
                                         <MdTimeline className="md:mr-2" />
@@ -68,7 +68,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                                     </div>
                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
                                         <FaShieldAlt className="md:mr-2" />
-                                        <p className="text-base pl-3">Lifetime warranty</p>
+                                        <p className="text-base pl-3">Hand Crafted</p>
                                     </div>
                                 </div>
                             </div>

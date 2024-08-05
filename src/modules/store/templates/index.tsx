@@ -27,7 +27,7 @@ const StoreTemplate = ({
         <Suspense fallback={<SkeletonProductGrid />}>
           <PaginatedProducts
             sortBy={sortBy || "created_at"}
-            page={pageNumber}
+            // page={pageNumber}
             countryCode={countryCode}
           />
         </Suspense>

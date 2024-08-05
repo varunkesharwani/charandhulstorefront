@@ -6,7 +6,7 @@ export const TopHeader: React.FC = () => {
     <div className="w-full overflow-hidden text-white bg-[#023047f8] ">
       <div className="revolving-text-wrapper">
         <div className="revolving-text">
-          <span>Free Shipping Above 5000</span>
+          <span>Free Shipping </span>
           <span>Pure Copper Utensils</span>
           <span>Additional Promotion Here</span>
           <span>New Arrivals: Check Out the Latest Collection</span>

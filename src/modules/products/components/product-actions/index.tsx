@@ -1,139 +1,128 @@
 "use client"
 
-import { Region } from "@medusajs/medusa"
-import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { Button } from "@medusajs/ui"
-import { isEqual } from "lodash"
-import { useParams } from "next/navigation"
-import { useEffect, useMemo, useRef, useState } from "react"
-
-import { useIntersection } from "@lib/hooks/use-in-view"
-import { addToCart } from "@modules/cartyyy/actions"
-import Divider from "@modules/common/components/divider"
-import OptionSelect from "@modules/products/components/option-select"
-
-import MobileActions from "../mobile-actions"
-import ProductPrice from "../product-price"
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { Region } from '@medusajs/medusa';
+import { PricedProduct } from '@medusajs/medusa/dist/types/pricing';
+import { useRouter } from 'next/navigation';
+import { isEqual } from 'lodash';
+import { useParams } from 'next/navigation';
+import { useIntersection } from '@lib/hooks/use-in-view';
+import { addToCart } from '@modules/cartyyy/actions';
+import Divider from '@modules/common/components/divider';
+import OptionSelect from '@modules/products/components/option-select';
+import ProductPrice from '../product-price';
+import QuantityInput from "../quantityinput";
 
 type ProductActionsProps = {
-  product: PricedProduct
-  region: Region
-  disabled?: boolean
-}
-
+  product: PricedProduct;
+  region: Region;
+  disabled?: boolean;
+};
 export type PriceType = {
-  calculated_price: string
-  original_price?: string
-  price_type?: "sale" | "default"
-  percentage_diff?: string
-}
+  calculated_price: string;
+  original_price?: string;
+  price_type?: "sale" | "default";
+  percentage_diff?: string;
+};
 
 export default function ProductActions({
   product,
   region,
   disabled,
 }: ProductActionsProps) {
-  const [options, setOptions] = useState<Record<string, string>>({})
-  const [isAdding, setIsAdding] = useState(false)
+  const [options, setOptions] = useState<Record<string, string>>({});
+  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [isBuyingNow, setIsBuyingNow] = useState(false);
+  const [quantity, setQuantity] = useState(1); // Quantity state
+  const router = useRouter();
+  const countryCode = useParams().countryCode as string;
+  const variants = product.variants;
 
-  const countryCode = useParams().countryCode as string
-
-  const variants = product.variants
-
-  // initialize the option state
   useEffect(() => {
-    const optionObj: Record<string, string> = {}
-
+    const optionObj: Record<string, string> = {};
     for (const option of product.options || []) {
-      Object.assign(optionObj, { [option.id]: undefined })
+      Object.assign(optionObj, { [option.id]: undefined });
     }
+    setOptions(optionObj);
+  }, [product]);
 
-    setOptions(optionObj)
-  }, [product])
-
-  // memoized record of the product's variants
   const variantRecord = useMemo(() => {
-    const map: Record<string, Record<string, string>> = {}
-
+    const map: Record<string, Record<string, string>> = {};
     for (const variant of variants) {
-      if (!variant.options || !variant.id) continue
-
-      const temp: Record<string, string> = {}
-
+      if (!variant.options || !variant.id) continue;
+      const temp: Record<string, string> = {};
       for (const option of variant.options) {
-        temp[option.option_id] = option.value
+        temp[option.option_id] = option.value;
       }
-
-      map[variant.id] = temp
+      map[variant.id] = temp;
     }
+    return map;
+  }, [variants]);
 
-    return map
-  }, [variants])
-
-  // memoized function to check if the current options are a valid variant
   const variant = useMemo(() => {
-    let variantId: string | undefined = undefined
-
+    let variantId: string | undefined = undefined;
     for (const key of Object.keys(variantRecord)) {
       if (isEqual(variantRecord[key], options)) {
-        variantId = key
+        variantId = key;
       }
     }
+    return variants.find((v) => v.id === variantId);
+  }, [options, variantRecord, variants]);
 
-    return variants.find((v) => v.id === variantId)
-  }, [options, variantRecord, variants])
-
-  // if product only has one variant, then select it
   useEffect(() => {
     if (variants.length === 1 && variants[0].id) {
-      setOptions(variantRecord[variants[0].id])
+      setOptions(variantRecord[variants[0].id]);
     }
-  }, [variants, variantRecord])
+  }, [variants, variantRecord]);
 
-  // update the options when a variant is selected
   const updateOptions = (update: Record<string, string>) => {
-    setOptions({ ...options, ...update })
-  }
+    setOptions({ ...options, ...update });
+  };
 
-  // check if the selected variant is in stock
   const inStock = useMemo(() => {
-    // If we don't manage inventory, we can always add to cart
-    if (variant && !variant.manage_inventory) {
-      return true
-    }
+    if (variant && !variant.manage_inventory) return true;
+    if (variant && variant.allow_backorder) return true;
+    if (variant?.inventory_quantity && variant.inventory_quantity > 0) return true;
+    return false;
+  }, [variant]);
 
-    // If we allow back orders on the variant, we can add to cart
-    if (variant && variant.allow_backorder) {
-      return true
-    }
+  const actionsRef = useRef<HTMLDivElement>(null);
+  const inView = useIntersection(actionsRef, '0px');
 
-    // If there is inventory available, we can add to cart
-    if (variant?.inventory_quantity && variant.inventory_quantity > 0) {
-      return true
-    }
-
-    // Otherwise, we can't add to cart
-    return false
-  }, [variant])
-
-  const actionsRef = useRef<HTMLDivElement>(null)
-
-  const inView = useIntersection(actionsRef, "0px")
-
-  // add the selected variant to the cart
   const handleAddToCart = async () => {
-    if (!variant?.id) return null
-
-    setIsAdding(true)
+    if (!variant?.id) return null;
+    setIsAddingToCart(true);
+    setIsBuyingNow(false);
 
     await addToCart({
       variantId: variant.id,
-      quantity: 1,
+      quantity: quantity,
       countryCode,
-    })
+    });
 
-    setIsAdding(false)
-  }
+    setIsAddingToCart(false);
+  };
+
+  const handleBuyNow = async () => {
+    if (!variant?.id) return null;
+    setIsBuyingNow(true);
+    setIsAddingToCart(false);
+
+    await addToCart({
+      variantId: variant.id,
+      quantity: quantity,
+      countryCode,
+    });
+
+    setIsBuyingNow(false);
+
+    // Redirect to localized /cart path
+    router.push(`/${countryCode}/cart`);
+  };
+
+  const handleQuantityChange = (newQuantity: number) => {
+    setQuantity(newQuantity);
+  };
 
   return (
     <>
@@ -141,20 +130,17 @@ export default function ProductActions({
         <div>
           {product.variants.length > 1 && (
             <div className="flex flex-col gap-y-4">
-              {(product.options || []).map((option) => {
-                return (
-                  <div key={option.id}>
-                    <OptionSelect
-                      option={option}
-                      current={options[option.id]}
-                      updateOption={updateOptions}
-                      title={option.title}
-                      data-testid="product-options"
-                      disabled={!!disabled || isAdding}
-                    />
-                  </div>
-                )
-              })}
+              {(product.options || []).map((option) => (
+                <div key={option.id}>
+                  <OptionSelect
+                    option={option}
+                    current={options[option.id]}
+                    updateOption={updateOptions}
+                    title={option.title}
+                    disabled={!!disabled || isAddingToCart || isBuyingNow}
+                  />
+                </div>
+              ))}
               <Divider />
             </div>
           )}
@@ -162,33 +148,40 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={variant} region={region} />
 
-        <Button
-          onClick={handleAddToCart}
-          disabled={!inStock || !variant || !!disabled || isAdding}
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
-          data-testid="add-product-button"
-        >
-          {!variant
-            ? "Select variant"
-            : !inStock
-            ? "Out of stock"
-            : "Add to cart"}
-        </Button>
-        {/* <MobileActions
-          product={product}
-          variant={variant}
-          region={region}
-          options={options}
-          updateOptions={updateOptions}
-          inStock={inStock}
-          handleAddToCart={handleAddToCart}
-          isAdding={isAdding}
-          show={!inView}
-          optionsDisabled={!!disabled || isAdding}
-        /> */}
+        <QuantityInput quantity={quantity} handleQuantityChange={handleQuantityChange} />
+
+        <div className="flex flex-col md:flex-row md:space-x-2 space-x-0 space-y-2 md:space-y-0">
+          <button
+            onClick={handleAddToCart}
+            disabled={!inStock || !variant || !!disabled || isAddingToCart || isBuyingNow}
+            className="w-full h-[50px] bg-[#023047f8] rounded-md border-2 border-[#023047f8] text-lg text-white hover:bg-[#023047f8]/30"
+            data-testid="add-product-button"
+          >
+            {isAddingToCart
+              ? "Adding..."
+              : !variant
+                ? "Select variant"
+                : !inStock
+                  ? "Out of stock"
+                  : "Add to cart"}
+          </button>
+
+          <button
+            onClick={handleBuyNow}
+            disabled={!inStock || !variant || !!disabled || isAddingToCart || isBuyingNow}
+            className="w-full h-[50px] bg-[#023047f8] rounded-md border-2 border-[#023047f8] text-lg text-white hover:bg-[#023047f8]/30"
+            data-testid="buy-now-button"
+          >
+            {isBuyingNow
+              ? "Buying..."
+              : !variant
+                ? "Select variant"
+                : !inStock
+                  ? "Out of stock"
+                  : "Buy Now"}
+          </button>
+        </div>
       </div>
     </>
-  )
+  );
 }

@@ -8,6 +8,9 @@ import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
 import CollectionsGrid from "@modules/products/components/utility-grid"
 import MetalsGrid from "@modules/products/components/metal-gird"
+import NewPage from "@modules/common/components/new-page"
+import NewGrid from "@modules/products/components/new-grid"
+import ChoicePage from "@modules/common/components/makeright"
 
 export const metadata: Metadata = {
   title: "Charandhul Store",
@@ -126,35 +129,54 @@ export default async function Home({
 
   return (
     <>
-      <Hero />
-      <div className="container mx-auto px-4 md:px-6 md:pt-10 md:mt-7 flex flex-col items-center justify-center text-[#023047]">
-        <div className="flex flex-col items-center justify-center md:space-y-4  space-y-1 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
-              Our Copper & Brass Collection
-            </h2>
-            <p className="max-w-[900px] text-base text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
-              Explore our exquisite range of handcrafted copper and brass utensils, perfect for elevating your kitchen experience.
-            </p>
-          </div>
+    <Hero />
+    <div className="container mx-auto px-4 md:px-6 md:pt-10 md:mt-7 flex flex-col items-center justify-center text-[#023047]">
+      <div className="flex flex-col items-center justify-center md:space-y-4 space-y-1 text-center">
+        <div className="space-y-2">
+          <h2 className="text-3xl font-bold tracking-tighter text-[#023047] sm:text-4xl md:text-5xl lg:text-6xl">
+            Our Copper & Brass Collection
+          </h2>
+          <p className="max-w-[900px] text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+            Explore our exquisite range of handcrafted copper and brass utensils, perfect for elevating your kitchen experience.
+          </p>
         </div>
       </div>
-      <div className="py-5 flex flex-col items-center justify-center">
-      
-        <p className="pt-1 md:pt-5  max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
-          Shop by Utility
-        </p>
-      </div>
-      <div className="flex justify-center flex-wrap gap-8">
-        <CollectionsGrid collections={allCollections.collections} region={region} />
-      </div>
-   
-      
-      <div>
-        <ul className="flex flex-col">
-          <FeaturedProducts collections={collections} region={region} />
-        </ul>
-      </div>
-    </>
+    </div>
+    
+    <div className="py-5 flex flex-col items-center justify-center">
+      <p className="pt-1 md:pt-5 max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+        Shop by Utility
+      </p>
+    </div>
+    
+    <div className="flex justify-center flex-wrap gap-8">
+      <CollectionsGrid collections={allCollections.collections} region={region} />
+    </div>
+
+     <div className="py-5 flex flex-col items-center justify-center">
+      <p className="pt-1 md:pt-5 max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
+        New Arrivals
+      </p>
+    </div>
+    
+    <div className="flex justify-center flex-wrap gap-8">
+      <NewGrid collections={allCollections.collections} region={region} />
+    </div>
+    
+    <div className="relative flex justify-center items-center  md:p-6 p-1 pt-14 w-full overflow-hidden">
+     
+      <ChoicePage />
+    </div>
+
+    <div>
+      <ul className="flex flex-col">
+        <FeaturedProducts collections={collections} region={region} />
+      </ul>
+    </div>
+    
+    <div className="flex justify-center flex-wrap gap-8 px-8">
+      <NewPage />
+    </div>
+  </>
   )
 }

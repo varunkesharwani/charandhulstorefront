@@ -155,7 +155,7 @@ export default async function Home({
 
      <div className="py-5 flex flex-col items-center justify-center">
       <p className="pt-1 md:pt-5 max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
-        New Arrivals
+        BEST SELLERS
       </p>
     </div>
     

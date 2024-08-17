@@ -225,7 +225,7 @@ export default function ProductActions({
   useEffect(() => {
     const optionObj: Record<string, string> = {};
     product.options?.forEach(option => {
-      optionObj[option.id] = undefined;
+      optionObj[option.id] = "";
     });
     setOptions(optionObj);
   }, [product]);

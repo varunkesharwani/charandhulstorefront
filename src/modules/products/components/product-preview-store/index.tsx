@@ -1,4 +1,5 @@
-import { Text } from "@medusajs/ui";
+
+
 import { ProductPreviewTypeZ } from "types/global";
 import { retrievePricedProductById } from "@lib/data";
 import { getProductPrice } from "@lib/util/get-product-price";
@@ -17,12 +18,19 @@ export default async function ProductPreviewStore({
   isFeatured?: boolean;
   region: Region;
 }) {
+  // Log the product metadata
 
-
- 
+  // Filter out hidden products
   if (productPreview.metadata?.hidden === "true") {
     return null;
   }
+  const truncateTitle = (title: string) => {
+    const maxLength = 30; // Define the max length for truncation
+    const truncateAt = title.indexOf('|') !== -1 ? title.indexOf('|') : maxLength;
+
+    return title.slice(0, truncateAt).trim();
+  };
+  const truncatedTitle = truncateTitle(productPreview.title);
 
   const pricedProduct = await retrievePricedProductById({
     id: productPreview.id,
@@ -55,16 +63,17 @@ export default async function ProductPreviewStore({
           isFeatured={isFeatured}
         />
         <div className="flex flex-col txt-compact-medium mt-4 justify-between space-y-1">
-          <Text
+          <h1
             className="text-sm md:font-semibold md:text-sm"
             data-testid="product-title"
           >
-            {productPreview.title}
-          </Text>
+            {truncatedTitle}
+          </h1>
+
           <div className="flex items-center gap-x-2   flex-row text-sm md:font-semibold md:text-sm justify-between">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
-     
+          {/* <ProductActionsWrapper id={product.id} region={region} /> */}
         </div>
       </div>
     </LocalizedClientLink>

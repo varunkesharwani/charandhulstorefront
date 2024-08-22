@@ -235,6 +235,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import MedusaCTA from "@modules/layout/components/medusa-cta"
 import Link from "next/link"
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
   const { product_categories } = await getCategoriesList(0, 6)
@@ -271,7 +272,7 @@ export default async function Footer() {
               <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer border-2">
                 <Link href="https://x.com/charandhulStore">
                   {" "}
-                  <FaTwitter size={20} />
+                  <FaXTwitter size={20} />
                 </Link>
               </div>
               <div className="w-10 h-10 rounded-full bg-white/[0.25] flex items-center justify-center text-black hover:bg-black hover:text-white cursor-pointer border-2">
@@ -354,7 +355,7 @@ export default async function Footer() {
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
-                    ShippingPolicy
+                    Shipping Policy
                   </LocalizedClientLink>
                 </li>
                 <li>
@@ -363,7 +364,7 @@ export default async function Footer() {
                     rel="noreferrer"
                     className="hover:text-ui-fg-base"
                   >
-                    PrivacyPolicy
+                    Privacy Policy
                   </LocalizedClientLink>
                 </li>
                 <li>

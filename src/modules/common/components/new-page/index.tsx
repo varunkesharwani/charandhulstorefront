@@ -14,10 +14,11 @@ export default function NewPage() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-[#023047]">
-                  Crafting Copper Cookware Since 1972
+                A Legacy in Brass and Copper Craftsmanship
+
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl text-[#023047]">
-                  Charandhul was founded by a family of master coppersmiths who have been honing their craft for generations. Our commitment to quality and tradition is evident in every piece we create.
+                Charandhul, renowned for its exquisite brass and copper products, epitomizes centuries of artisanal excellence and cultural heritage. Rooted in the ancient traditions of metalworking, Charandhul creations blend meticulous craftsmanship with historical artistry. Each piece is a testament to the skillful fusion of durable materials and intricate design, reflecting both the practical utility and aesthetic beauty inherent in brass and copper. The legacy of Charandhul is not just in the products it offers but in its commitment to preserving a rich tradition that celebrates both function and form.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">

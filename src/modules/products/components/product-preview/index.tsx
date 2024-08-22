@@ -26,7 +26,13 @@ export default async function ProductPreview({
   if (!pricedProduct) {
     return null
   }
+  const truncateTitle = (title: string) => {
+    const maxLength = 30; // Define the max length for truncation
+    const truncateAt = title.indexOf('|') !== -1 ? title.indexOf('|') : maxLength;
 
+    return title.slice(0, truncateAt).trim();
+  };
+  const truncatedTitle = truncateTitle(productPreview.title);
   const { cheapestPrice } = getProductPrice({
     product: pricedProduct,
     region,
@@ -49,12 +55,12 @@ export default async function ProductPreview({
           isFeatured={isFeatured}
         />
         <div className="flex flex-col txt-compact-medium mt-4 justify-between space-y-1">
-          <Text
+        <h1
             className="text-sm md:font-semibold md:text-sm"
             data-testid="product-title"
           >
-            {productPreview.title}
-          </Text>
+            {truncatedTitle}
+          </h1>
           <div className="flex items-center gap-x-2   flex-row text-sm md:font-semibold md:text-sm justify-between">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>

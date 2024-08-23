@@ -4,11 +4,11 @@
 // // import { Carousel } from "react-responsive-carousel"
 // // import { BiArrowBack } from "react-icons/bi"
 // // import Link from 'next/link'
-// // import POwer from "../../../../../public/HomeImg/1.svg"
-// // import FirstImg from "../../../../../public/HomeImg/1.svg"
-// // import SecondImg from "../../../../../public/HomeImg/2.svg"
-// // import ThirdImg from "../../../../../public/HomeImg/3.svg"
-// // import FourthImg from "../../../../../public/HomeImg/4.svg"
+// // import POwer from "../../../../../public/Newimg/1.svg"
+// // import FirstImg from "../../../../../public/Newimg/1.svg"
+// // import SecondImg from "../../../../../public/Newimg/2.svg"
+// // import ThirdImg from "../../../../../public/Newimg/3.svg"
+// // import FourthImg from "../../../../../public/Newimg/4.svg"
 
 // // const HeroBanner: React.FC = () => {
 // //   return (
@@ -177,10 +177,10 @@
 // import { BiArrowBack } from "react-icons/bi";
 // import Link from "next/link";
 // import Image from "next/image";
-// import FirstImg from "../../../../../public/HomeImg/1.svg";
-// import SecondImg from "../../../../../public/HomeImg/2.svg";
-// import ThirdImg from "../../../../../public/HomeImg/3.svg";
-// import FourthImg from "../../../../../public/HomeImg/4.svg";
+// import FirstImg from "../../../../../public/Newimg/1.svg";
+// import SecondImg from "../../../../../public/Newimg/2.svg";
+// import ThirdImg from "../../../../../public/Newimg/3.svg";
+// import FourthImg from "../../../../../public/Newimg/4.svg";
 
 // const HeroBanner: React.FC = () => {
 //   return (
@@ -294,10 +294,11 @@ import { Carousel } from "react-responsive-carousel";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import FirstImg from "../../../../../public/HomeImg/1.svg";
-import SecondImg from "../../../../../public/HomeImg/2.svg";
-import ThirdImg from "../../../../../public/HomeImg/3.svg";
-import FourthImg from "../../../../../public/HomeImg/4.svg";
+import FirstImg from "../../../../../public/Newimg/1.svg";
+import SecondImg from "../../../../../public/Newimg/2.svg";
+import ThirdImg from "../../../../../public/Newimg/3.svg";
+import FourthImg from "../../../../../public/Newimg/4.svg";
+import FifthImg from "../../../../../public/Newimg/5.svg";
 
 const HeroBanner: React.FC = () => {
   return (
@@ -332,7 +333,7 @@ const HeroBanner: React.FC = () => {
             </div>
           )}
         >
-          {[FirstImg, SecondImg, ThirdImg, FourthImg].map((imgSrc, index) => (
+          {[FirstImg, SecondImg, ThirdImg, FourthImg ,FifthImg].map((imgSrc, index) => (
             <div key={index}>
               <Image
                 src={imgSrc}
@@ -379,7 +380,7 @@ const HeroBanner: React.FC = () => {
             </div>
           )}
         >
-          {[FirstImg, SecondImg, ThirdImg, FourthImg].map((imgSrc, index) => (
+          {[FirstImg, SecondImg, ThirdImg, FourthImg ,FifthImg].map((imgSrc, index) => (
             <div key={index}>
               <Image
                 src={imgSrc}

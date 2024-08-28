@@ -294,11 +294,11 @@ import { Carousel } from "react-responsive-carousel";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import FirstImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
-import SecondImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
-import ThirdImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
-import FourthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
-import FifthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
+import FirstImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
+import SecondImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
+import ThirdImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
+import FourthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
+import FifthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
 
 const HeroBanner: React.FC = () => {
   return (

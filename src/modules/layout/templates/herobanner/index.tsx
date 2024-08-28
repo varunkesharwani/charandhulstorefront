@@ -4,11 +4,11 @@
 // // import { Carousel } from "react-responsive-carousel"
 // // import { BiArrowBack } from "react-icons/bi"
 // // import Link from 'next/link'
-// // import POwer from "../../../../../public/Newimg/1.svg"
-// // import FirstImg from "../../../../../public/Newimg/1.svg"
-// // import SecondImg from "../../../../../public/Newimg/2.svg"
-// // import ThirdImg from "../../../../../public/Newimg/3.svg"
-// // import FourthImg from "../../../../../public/Newimg/4.svg"
+// // import POwer from "../../../../../public/1.svg"
+// // import FirstImg from "../../../../../public/1.svg"
+// // import SecondImg from "../../../../../public/2.svg"
+// // import ThirdImg from "../../../../../public/3.svg"
+// // import FourthImg from "../../../../../public/4.svg"
 
 // // const HeroBanner: React.FC = () => {
 // //   return (
@@ -177,10 +177,10 @@
 // import { BiArrowBack } from "react-icons/bi";
 // import Link from "next/link";
 // import Image from "next/image";
-// import FirstImg from "../../../../../public/Newimg/1.svg";
-// import SecondImg from "../../../../../public/Newimg/2.svg";
-// import ThirdImg from "../../../../../public/Newimg/3.svg";
-// import FourthImg from "../../../../../public/Newimg/4.svg";
+// import FirstImg from "../../../../../public/1.svg";
+// import SecondImg from "../../../../../public/2.svg";
+// import ThirdImg from "../../../../../public/3.svg";
+// import FourthImg from "../../../../../public/4.svg";
 
 // const HeroBanner: React.FC = () => {
 //   return (
@@ -294,11 +294,11 @@ import { Carousel } from "react-responsive-carousel";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import FirstImg from "../../../../../public/Newimg/1.svg";
-import SecondImg from "../../../../../public/Newimg/2.svg";
-import ThirdImg from "../../../../../public/Newimg/3.svg";
-import FourthImg from "../../../../../public/Newimg/4.svg";
-import FifthImg from "../../../../../public/Newimg/5.svg";
+import FirstImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
+import SecondImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
+import ThirdImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
+import FourthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
+import FifthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1724878128/4_oiyx1x.svg";
 
 const HeroBanner: React.FC = () => {
   return (

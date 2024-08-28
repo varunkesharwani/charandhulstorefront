@@ -285,7 +285,6 @@
 
 // export default HeroBanner;
 
-
 "use client";
 
 import React, { MouseEvent } from "react";
@@ -294,13 +293,16 @@ import { Carousel } from "react-responsive-carousel";
 import { BiArrowBack } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
-import FirstImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
-import SecondImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
-import ThirdImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
-import FourthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
-import FifthImg from "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg";
 
 const HeroBanner: React.FC = () => {
+  const images = [
+    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+  ];
+
   return (
     <div className="w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
       <div className="relative text-white text-[20px] w-full mx-auto md:h-96 md:hidden">
@@ -333,12 +335,14 @@ const HeroBanner: React.FC = () => {
             </div>
           )}
         >
-          {[FirstImg, SecondImg, ThirdImg, FourthImg ,FifthImg].map((imgSrc, index) => (
+          {images.map((imgSrc, index) => (
             <div key={index}>
               <Image
                 src={imgSrc}
                 className="w-full h-full object-cover"
                 alt={`Image ${index + 1}`}
+                width={1920}
+                height={1080}
               />
               <Link
                 href={`/store`}
@@ -380,12 +384,14 @@ const HeroBanner: React.FC = () => {
             </div>
           )}
         >
-          {[FirstImg, SecondImg, ThirdImg, FourthImg ,FifthImg].map((imgSrc, index) => (
+          {images.map((imgSrc, index) => (
             <div key={index}>
               <Image
                 src={imgSrc}
                 className="h-[450px] object-cover"
                 alt={`Image ${index + 1}`}
+                width={1920}
+                height={1080}
               />
               <Link
                 href={`/store`}

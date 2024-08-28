@@ -121,7 +121,7 @@ const RazorpayPaymentButton = ({
     })
     razorpay.on("payment.authorized", function (response: any) {})
     razorpay.on("payment.captured", function (response: any) {})
-  }, [Razorpay])
+  }, [Razorpay, cart?.billing_address, cart?.email, cart.region.currency_code, cart?.shipping_address?.phone, orderData.id, session.amount, session.data.notes])
   return (
     <>
       <Button disabled={submitting || notReady} onClick={handlePayment} className="mt-6 bg-[#ffc600] hover:bg-[#ffc600]/40 text-black">

@@ -296,11 +296,11 @@ import Image from "next/image";
 
 const HeroBanner: React.FC = () => {
   const images = [
-    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
-    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
-    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
-    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
-    "https://res.cloudinary.com/dc4fej59t/image/upload/v1705770459/cld-sample-3.jpg",
+    "https://res.cloudinary.com/damjpug4c/image/upload/v1725055980/22_y7jxre.jpg",
+    "https://res.cloudinary.com/damjpug4c/image/upload/v1725055980/55_opnzuu.jpg",
+    "https://res.cloudinary.com/damjpug4c/image/upload/v1725055980/11_ffs6gy.jpg",
+    "https://res.cloudinary.com/damjpug4c/image/upload/v1725055980/44_mf4cnk.jpg",
+    "https://res.cloudinary.com/damjpug4c/image/upload/v1725055980/33_f1kqjj.jpg",
   ];
 
   return (

@@ -85,7 +85,7 @@ const RazorpayPaymentButton = ({
       name: process.env.COMPANY_NAME ?? "Charandhul ",
       description: `Order number ${orderData.id}`,
 
-      image: "https://res.cloudinary.com/dgvwg1ikm/image/upload/v1719594807/vkcustoby50gjjiwhqqc.jpg ",
+      image: "https://res.cloudinary.com/dgvwg1ikm/image/upload/v1719594807/vkcustoby50gjjiwhqqc.jpg",
       modal: {
         backdropclose: true,
         escape: true,

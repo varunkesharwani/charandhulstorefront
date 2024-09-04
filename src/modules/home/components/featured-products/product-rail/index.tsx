@@ -64,7 +64,7 @@ export default function ProductRail({
   region: Region
 }) {
   // Filter out collections where isUtility is the string "true"
-  if (collection.metadata?.isUtility === "true") {
+  if (collection.metadata?.isFeatured === "true") {
     return null
   }
 
@@ -75,7 +75,7 @@ export default function ProductRail({
   }
 
   // Slice the first 8 products
-  const displayedProducts = products.slice(0, 8)
+  const displayedProducts = products.slice(0, 4)
 
   return (
     <div className="content-container py-12 small:py-12">

@@ -15,7 +15,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
   return (
     <div>
       <div style={{
-        backgroundColor: '#023047f8', // Light blue background
+        backgroundColor: '#cbdfbd', // Light blue background
         color: '#000',
         padding: '4px 0',
         fontSize: '12px',

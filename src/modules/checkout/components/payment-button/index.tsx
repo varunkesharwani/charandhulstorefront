@@ -70,7 +70,8 @@ const RazorpayPaymentButton = ({
 
   const handlePayment = useCallback(() => {
     const options: RazorpayOptions = {
-      callback_url: `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/razorpay/hooks`,
+      // callback_url: `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/razorpay/hooks`,
+            callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/order/confirmed/${cart?.data.id}`,
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY ?? '',
       amount: session.amount.toString(),
       order_id: orderData.id,

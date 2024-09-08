@@ -52,7 +52,7 @@ const RazorpayPaymentButton = ({
 }: {
   session: PaymentSession
   notReady: boolean
-  cart: Omit<Cart, "refundable_amount" | "refunded_total">
+  cart: Omit<Cart, "refundable_amount" | "refunded_total"> 
 }) => {
   const [disabled, setDisabled] = useState(false)
   const [submitting, setSubmitting] = useState(false)
@@ -71,15 +71,15 @@ const RazorpayPaymentButton = ({
   const handlePayment = useCallback(() => {
     const options: RazorpayOptions = {
       // callback_url: `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/razorpay/hooks`,
-            callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/order/confirmed/${cart?.data.id}`,
+            callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY ?? '',
       amount: session.amount.toString(),
       order_id: orderData.id,
       currency: cart.region.currency_code.toLocaleUpperCase(),
-      name: process.env.COMPANY_NAME ?? "ShopNTrolly ",
+      name: process.env.COMPANY_NAME ?? "charandhul ",
       description: `Order number ${orderData.id}`,
 
-      image: "https://example.com/your_logo",
+      image: "https://res.cloudinary.com/damjpug4c/image/upload/v1725814732/logo1_p6tnlc.png",
       modal: {
         backdropclose: true,
         escape: true,
@@ -90,7 +90,7 @@ const RazorpayPaymentButton = ({
         },
         animation: true,
       },
-      handler: async (args) => {
+      handler: async (_args) => {
         onPaymentCompleted()
       },
       "prefill": {
@@ -117,8 +117,8 @@ const RazorpayPaymentButton = ({
 
     }
     )
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Razorpay]);
+  
+  }, [Razorpay, cart?.billing_address, cart?.email, cart.region.currency_code, cart?.shipping_address?.phone, orderData.id, session.amount, session.data.notes]);
   return (
     <>
       <Button

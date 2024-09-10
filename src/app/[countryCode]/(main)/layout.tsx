@@ -26,7 +26,7 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
       }}>
         We are currently facing issues while ordering from iPhone. Please continue with Android, Mac, or Windows, or{' '}
         <a
-          href="https://wa.me/917004608819"
+          href="https://wa.me/917428194995"
           style={{
             color: '#0066CC', // Darker blue for the link
             fontWeight: 'bold',

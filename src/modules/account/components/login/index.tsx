@@ -12,8 +12,8 @@ type Props = {
 
 const Login = ({ setCurrentView }: Props) => {
   const [message, formAction] = useFormState(logCustomerIn, null)
-const medusaUrl = process.env.REACT_APP_MEDUSA_URL || 'https://admin.charandhul.com';
-  const authPath = process.env.REACT_APP_AUTH_PATH || 'store/auth/google';
+const medusaUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || 'https://admin.charandhul.com';
+  const authPath = process.env.NEXT_PUBLIC_MEDUSA_AUTH_PATH || 'store/auth/google';
 
   const authUrl = `${medusaUrl}/${authPath}`;
   return (

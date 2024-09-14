@@ -31,6 +31,13 @@ const nextConfig = withStoreConfig({
       },  {
         protocol: "http",
         hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.charandhul.com",
+      },  {
+        protocol: "http",
+        hostname: "www.charandhul.com",
       }
       
     ],

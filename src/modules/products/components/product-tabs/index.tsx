@@ -158,7 +158,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             return (
               <li key={index} className="my-4">
                 {boldTextMatch ? (
-                  <span className="font-bold">{boldTextMatch[1].trim()}</span>
+                  <span className="font-extrabold text-xl ">{boldTextMatch[1].trim()}</span>
                 ) : headingMatch ? (
                   <h3 className="font-semibold text-lg">{headingMatch[1].trim()}</h3>
                 ) : bulletPointMatch ? (

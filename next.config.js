@@ -38,7 +38,15 @@ const nextConfig = withStoreConfig({
       },  {
         protocol: "http",
         hostname: "www.charandhul.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },  {
+        protocol: "http",
+        hostname: "images.pexels.com",
       }
+      
       
     ],
   },

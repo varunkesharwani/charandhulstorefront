@@ -64,7 +64,7 @@ export default async function ProductPreview({
           <div className="flex items-center gap-x-2   flex-row text-sm md:font-semibold md:text-sm justify-between">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
-          {/* <ProductActionsWrapper id={product.id} region={region} /> */}
+        
         </div>
       </div>
     </LocalizedClientLink>

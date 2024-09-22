@@ -137,6 +137,44 @@ const ShippingInfoTab = () => {
 
 
 
+// const ProductInfo = ({ product }: ProductInfoProps) => {
+//   // Split the description into lines for better processing
+//   const descriptionLines = (product.description ?? "").split("\n").filter(line => line.trim() !== "");
+
+//   return (
+//     <div id="product-info">
+//       <div className="flex flex-col mx-auto pt-5">
+//         <ul className="list-disc list-inside text-medium text-ui-fg-subtle" data-testid="product-description">
+//           {descriptionLines.map((line, index) => {
+//             const trimmedLine = line.trim();
+
+//             // Handle bold text wrapped in %% (e.g., /%bold text%/)
+//             const boldTextMatch = trimmedLine.match(/\/%(.*?)%\//);
+//             // Handle headings wrapped in // (e.g., //Heading//)
+//             const headingMatch = trimmedLine.match(/\/\/(.*?)\/\//);
+//             // Handle bullet points starting with $ (e.g., $Bullet point)
+//             const bulletPointMatch = trimmedLine.match(/^\$(.*)/);
+
+//             return (
+//               <li key={index} className="my-4">
+//                 {boldTextMatch ? (
+//                   <span className="font-extrabold text-xl ">{boldTextMatch[1].trim()}</span>
+//                 ) : headingMatch ? (
+//                   <h3 className="font-semibold text-lg">{headingMatch[1].trim()}</h3>
+//                 ) : bulletPointMatch ? (
+//                   <span>{bulletPointMatch[1].trim()}</span>
+//                 ) : (
+//                   trimmedLine
+//                 )}
+//               </li>
+//             );
+//           })}
+//         </ul>
+//       </div>
+//     </div>
+//   );
+// };
+
 const ProductInfo = ({ product }: ProductInfoProps) => {
   // Split the description into lines for better processing
   const descriptionLines = (product.description ?? "").split("\n").filter(line => line.trim() !== "");
@@ -152,8 +190,8 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
             const boldTextMatch = trimmedLine.match(/\/%(.*?)%\//);
             // Handle headings wrapped in // (e.g., //Heading//)
             const headingMatch = trimmedLine.match(/\/\/(.*?)\/\//);
-            // Handle bullet points starting with $ (e.g., $Bullet point)
-            const bulletPointMatch = trimmedLine.match(/^\$(.*)/);
+            // Handle bullet points starting with ^ (e.g., ^Bullet point)
+            const bulletPointMatch = trimmedLine.match(/^\^(.*)/);
 
             return (
               <li key={index} className="my-4">
@@ -174,7 +212,6 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
     </div>
   );
 };
-
 
 
 export default ProductTabs

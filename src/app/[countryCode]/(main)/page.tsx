@@ -151,7 +151,7 @@ export default async function Home({
       <CollectionsGrid collections={allCollections.collections} region={region} />
     </div>
 
-     <div className="py-5 flex flex-col items-center justify-center">
+     {/* <div className="py-5 flex flex-col items-center justify-center">
       <p className="pt-1 md:pt-5 max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
         BEST SELLERS
       </p>
@@ -159,7 +159,7 @@ export default async function Home({
     
     <div className="flex justify-center flex-wrap gap-8">
       <NewGrid collections={allCollections.collections} region={region} />
-    </div>
+    </div> */}
     
     <div className="relative flex justify-center items-center  md:p-6 p-1 pt-14 w-full overflow-hidden">
      
@@ -172,7 +172,7 @@ export default async function Home({
       </ul>
     </div>
     
-    <div className="flex justify-center flex-wrap gap-8 px-8">
+    <div className="flex justify-center flex-wrap  px-8 ">
       <NewPage />
     </div>
   </>

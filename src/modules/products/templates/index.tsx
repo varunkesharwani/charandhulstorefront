@@ -1,134 +1,68 @@
-// import { Region } from "@medusajs/medusa";
-// import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
-// import React, { Suspense } from "react";
-// import { FaShippingFast, FaExchangeAlt, FaShieldAlt } from 'react-icons/fa';
-// import { MdTimeline } from 'react-icons/md';
-
-// import ImageGallery from "@modules/products/components/image-gallery";
-// import ProductActions from "@modules/products/components/product-actions";
-// import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta";
-// import ProductTabs from "@modules/products/components/product-tabs";
-// import RelatedProducts from "@modules/products/components/related-products";
-// import ProductInfo from "@modules/products/templates/product-info";
-// import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products";
-// import { notFound } from "next/navigation";
-// import ProductActionsWrapper from "./product-actions-wrapper";
-// import ProductHeading from "./Product-heading";
-
-// type ProductTemplateProps = {
-//     product: PricedProduct;
-//     region: Region;
-//     countryCode: string;
-// };
-
-// const ProductTemplate: React.FC<ProductTemplateProps> = ({
-//     product,
-//     region,
-//     countryCode,
-// }) => {
-//     if (!product || !product.id) {
-//         return notFound();
-//     }
-
-//     return (
-//         <>
-//             <div className="content-container flex flex-col lg:flex-row py-6 relative">
-//                 <div className="flex flex-col lg:w-1/2 w-full gap-y-6">
-//                     <ImageGallery images={product?.images || []} />
-//                 </div>
-//                 <div className="flex flex-col lg:w-1/2 w-full px-0 md:px-8">
-//                     <ProductHeading product={product} />
-//                     <ProductActionsWrapper id={product.id} region={region} />
-//                     <ProductOnboardingCta />
-//                     <Suspense
-//                         fallback={
-//                             <ProductActions
-//                                 disabled={true}
-//                                 product={product}
-//                                 region={region}
-//                             />
-//                         }
-//                     >
-//                         <div className="my-5  border-t-2">
-//                             <div className="md:flex flex-col justify-between py-2 hidden">
-//                                 <div className="flex flex-col md:flex-row md:justify-between space-y-2">
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaShippingFast className="md:mr-2" />
-//                                         <p className="text-base pl-3">Free Shipping </p>
-//                                     </div>
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <MdTimeline className="md:mr-2" />
-//                                         <p className="text-base pl-3">Delivery within 4-5 days</p>
-//                                     </div>
-//                                 </div>
-//                                 <div className="flex flex-col md:flex-row md:justify-between space-y-2">
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaExchangeAlt className="md:mr-2" />
-//                                         <p className="text-base pl-3"> 7-days exchange</p>
-//                                     </div>
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaShieldAlt className="md:mr-2" />
-//                                         <p className="text-base pl-3">Hand Crafted</p>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <div className="flex flex-col justify-between md:hidden">
-//                                 <div className="flex flex-col md:flex-row md:justify-between">
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaShippingFast className="md:mr-2" />
-//                                         <p className="text-base pl-5">Free Shipping</p>
-//                                     </div>
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <MdTimeline className="md:mr-2" />
-//                                         <p className="text-base pl-5">Delivery timeline 7-10 days</p>
-//                                     </div>
-//                                 </div>
-//                                 <div className="flex flex-col md:flex-row md:justify-between">
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaExchangeAlt className="md:mr-2" />
-//                                         <p className="text-base pl-5">Easy 7-10 days Exchange</p>
-//                                     </div>
-//                                     <div className="flex flex-row items-center text-center mb-4 md:mb-0 md:mr-4 w-full md:w-1/2">
-//                                         <FaShieldAlt className="md:mr-2" />
-//                                         <p className="text-base pl-5">Lifetime warranty</p>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                             <ProductTabs product={product} />
-//                         </div>
-//                     </Suspense>
-//                 </div>
-//             </div>
-//             <div
-//                 className="content-container my-16 small:my-32"
-//                 data-testid="related-products-container"
-//             >
-//                 <Suspense fallback={<SkeletonRelatedProducts />}>
-//                     <RelatedProducts product={product} countryCode={countryCode} />
-//                 </Suspense>
-//             </div>
-//         </>
-//     );
-// };
-
-// export default ProductTemplate;
 import { Region } from "@medusajs/medusa";
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
 import React, { Suspense } from "react";
 import { FaShippingFast, FaExchangeAlt, FaShieldAlt } from 'react-icons/fa';
 import { MdTimeline } from 'react-icons/md';
 import Image from 'next/image';
-
 import ImageGallery from "@modules/products/components/image-gallery";
 import ProductActions from "@modules/products/components/product-actions";
 import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta";
 import ProductTabs from "@modules/products/components/product-tabs";
-import RelatedProducts from "@modules/products/components/related-products";
-import ProductInfo from "@modules/products/templates/product-info";
-import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products";
 import { notFound } from "next/navigation";
 import ProductActionsWrapper from "./product-actions-wrapper";
 import ProductHeading from "./Product-heading";
+import { ProductCollectionWithPreviews } from "types/global";
+import FeaturedProducts from "@modules/home/components/featured-products";
+import { Product } from "@medusajs/medusa"
+import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
+import { cache } from "react"
+
+const getCollectionsWithProducts = cache(
+  async (
+    countryCode: string
+  ): Promise<ProductCollectionWithPreviews[] | null> => {
+    const { collections } = await getCollectionsList(0, 5)
+
+    if (!collections) {
+      return null
+    }
+
+    const collectionIds = collections.map((collection) => collection.id)
+
+    await Promise.all(
+      collectionIds.map((id) =>
+        getProductsList({
+          queryParams: { collection_id: [id] },
+          countryCode,
+        })
+      )
+    ).then((responses) =>
+      responses.forEach(({ response, queryParams }) => {
+        let collection
+
+        if (collections) {
+          collection = collections.find(
+            (collection) => collection.id === queryParams?.collection_id?.[0]
+          )
+        }
+
+        if (!collection) {
+          return
+        }
+
+        collection.products = response.products as unknown as Product[]
+      })
+    )
+
+    const sortedCollections = collections.sort((a, b) => {
+      const isFeaturedA = parseInt(a.metadata?.isPriorityFeatured?.toString() || "0", 10)
+      const isFeaturedB = parseInt(b.metadata?.isPriorityFeatured?.toString() || "0", 10)
+      return isFeaturedA - isFeaturedB
+    })
+
+    return sortedCollections as unknown as ProductCollectionWithPreviews[]
+  }
+)
 
 type ProductTemplateProps = {
     product: PricedProduct;
@@ -136,14 +70,12 @@ type ProductTemplateProps = {
     countryCode: string;
 };
 
-const ProductTemplate: React.FC<ProductTemplateProps> = ({
-    product,
-    region,
-    countryCode,
-}) => {
+const ProductTemplate = async ({ product, region, countryCode }: ProductTemplateProps) => {
     if (!product || !product.id) {
         return notFound();
     }
+
+    const collections = await getCollectionsWithProducts(countryCode);
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -189,21 +121,18 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                         </Suspense>
                     </div>
                 </div>
-            </div>
-      
-{/*    
-   <div className="bg-gradient-to-b from-purple-50 to-purple-100 py-16">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-12 text-center text-purple-900">Related Products</h2>
-        <Suspense fallback={<SkeletonRelatedProducts />}>
-            {/* {console.log("Product:", product, "CountryCode:", countryCode)} */}
-            {/* <RelatedProducts product={product} countryCode={countryCode} />
-        </Suspense>
-    </div>
-</div> */} 
+                </div>
+            {/* Featured Products Section */}
+            {collections && (
+                <div className="bg-gradient-to-b from-blue-50 to-blue-100 py-16">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-4xl font-bold mb-12 text-center text-blue-900">Featured Products</h2>
+                        <FeaturedProducts collections={collections} region={region} />
+                    </div>
+                </div>
+            )}
 
-   
-            <div className="bg-gradient-to-b from-amber-50 to-amber-100 py-16">
+<div className="bg-gradient-to-b from-amber-50 to-amber-100 py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-4xl font-bold mb-12 text-center text-amber-900">Our Craftsmanship</h2>
                     <div className="space-y-16">
@@ -382,9 +311,8 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                         </ul>
                     </div>
                 </div>
-            </div>
-
-          
+            </div>         
+   
         </div>
     );
 };

@@ -14,6 +14,12 @@ module.exports = {
     extend: {
       borderRadius: {
         'custom': '13px',
+        none: "0px",
+        soft: "2px",
+        base: "4px",
+        rounded: "8px",
+        large: "16px",
+        circle: "9999px",
       },
       boxShadow: {
         'custom': '20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff',
@@ -41,14 +47,6 @@ module.exports = {
           90: "#111827",
         },
       },
-      borderRadius: {
-        none: "0px",
-        soft: "2px",
-        base: "4px",
-        rounded: "8px",
-        large: "16px",
-        circle: "9999px",
-      },
       maxWidth: {
         "8xl": "100rem",
       },
@@ -75,6 +73,8 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        cabin: ['var(--font-cabin)', 'serif'],
+        playfair: ['var(--font-playfair_display)', 'serif'],
       },
       keyframes: {
         ring: {
@@ -146,6 +146,10 @@ module.exports = {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(0)" },
         },
+        scroll: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         ring: "ring 2.2s cubic-bezier(0.5, 0, 0.5, 1) infinite",
@@ -161,6 +165,7 @@ module.exports = {
         enter: "enter 200ms ease-out",
         "slide-in": "slide-in 1.2s cubic-bezier(.41,.73,.51,1.02)",
         leave: "leave 150ms ease-in forwards",
+        scroll: "scroll 20s linear infinite",
       },
     },
   },

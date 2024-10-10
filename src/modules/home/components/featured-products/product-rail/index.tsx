@@ -11,7 +11,7 @@ export default function ProductRail({
   collection: ProductCollectionWithPreviews
   region: Region
 }) {
-  // Filter out collections where isUtility is the string "true"
+
   if (collection.metadata?.isFeatured === "true") {
     return null
   }
@@ -22,12 +22,12 @@ export default function ProductRail({
     return null
   }
 
-  // Slice the first 4 products
+
   const displayedProducts = products.slice(0, 4)
 
   return (
-    <div className="content-container">
-      <div className="flex justify-between mb-4">
+    <div className="content-container py-4 ">
+      <div className="flex justify-between mb-4 gap-4">
         <Text className="txt-xlarge md:font-bold md:text-3xl">
           {collection.title}
         </Text>

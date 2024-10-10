@@ -4,8 +4,9 @@ import SecondImg from "../../../../../public/2.jpeg";
 import ThirdImg from "../../../../../public/3.jpeg";
 import FourthImg from "../../../../../public/4.jpeg";
 import LocalizedClientLink from "../localized-client-link";
-
 export default function NewPage() {
+  const fourthIMage="https://res.cloudinary.com/dveckkrb6/image/upload/v1728518171/IMG-20241010-WA0003_ako6fr.jpg";
+  const fifThImage="https://res.cloudinary.com/dveckkrb6/image/upload/v1728575674/IMG_6940_jh2y1b.jpg";
   return (
     <div className="flex flex-col min-h-[100dvh] pt-12">
       <main className="flex-1">
@@ -66,7 +67,7 @@ export default function NewPage() {
               </div>
               <div className="grid gap-4">
                 <Image
-                  src={SecondImg}
+                  src={fifThImage}
                   alt="Copper Hammering"
                   width={550}
                   height={250}
@@ -74,7 +75,10 @@ export default function NewPage() {
                 />
                 <div className="grid grid-cols-2 gap-4">
                   <Image
-                    src={ThirdImg}
+                    src={fourthIMage}
+
+                    // //@ts-ignore
+                    // src="https://res.cloudinary.com/dveckkrb6/image/upload/v1728575487/IMG_6872_qrwrxg.jpg"
                     alt="Copper Polishing"
                     width={270}
                     height={200}
@@ -94,5 +98,6 @@ export default function NewPage() {
         </section>
       </main>
     </div>
+   
   );
 }

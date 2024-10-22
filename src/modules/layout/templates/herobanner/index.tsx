@@ -10,8 +10,8 @@ import Image from "next/image";
 
 const HeroBanner: React.FC = () => {
   const images = [
-
-  
+  "https://res.cloudinary.com/dveckkrb6/image/upload/v1729500646/WhatsApp_Image_2024-10-21_at_09.39.16_0ef7985f_okhygt.jpg",
+  "https://res.cloudinary.com/dveckkrb6/image/upload/v1729500638/WhatsApp_Image_2024-10-21_at_09.39.17_6bc0022b_lopmjo.jpg",
    "https://res.cloudinary.com/dveckkrb6/image/upload/v1728420529/3_gtgb28.jpg",
    "https://res.cloudinary.com/dveckkrb6/image/upload/v1728420535/2_pw0j0d.jpg",
    "https://res.cloudinary.com/dveckkrb6/image/upload/v1728420534/4_cc46j4.jpg",

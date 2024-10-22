@@ -1,34 +1,26 @@
-import dynamic from "next/dynamic";
-import { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next"
 
-// Lazy load Footer and TopHeader for performance
-const Footer = dynamic(() => import("@modules/layout/templates/footer"), { ssr: false });
-const Nav = dynamic(() => import("@modules/layout/templates/nav"));
-const TopHeader = dynamic(() => import("@modules/layout/templates/topnav"), { ssr: false });
+import Footer from "@modules/layout/templates/footer"
+import Nav from "@modules/layout/templates/nav"
+import { TopHeader } from "@modules/layout/templates/topnav"
 
-// BASE_URL for metadata
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:8000";
+
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:8000"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-};
+}
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
+export default async function PageLayout(props: { children: React.ReactNode }) {
   return (
     <div>
-      {/* Lazy loaded TopHeader and Nav */}
+     
       <TopHeader />
       <Nav />
+      {props.children}
 
-      {/* Main content of the page */}
-      {children}
-
-      {/* Lazy load Footer */}
       <Footer />
 
-      {/* Analytics, make sure this is async */}
-      <Analytics />
     </div>
-  );
+  )
 }

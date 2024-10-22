@@ -57,12 +57,13 @@ const ChoicePage = () => {
         </div>
         <div className="rounded-lg overflow-hidden">
           <Image
-            src={newimg} // Use the imported image here
+            src={newimg} 
             alt="Utensils"
             layout="responsive"
             width={500}
             height={500}
             className="object-cover"
+          
           />
         </div>
       </div>

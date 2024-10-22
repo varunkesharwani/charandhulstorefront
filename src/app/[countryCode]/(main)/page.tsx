@@ -18,46 +18,8 @@ export const metadata: Metadata = {
     "Charandhul Store is a curated collection of Copper Utlis.",
 }
 
-// const getCollectionsWithProducts = cache(
-//   async (
-//     countryCode: string
-//   ): Promise<ProductCollectionWithPreviews[] | null> => {
-//     const { collections } = await getCollectionsList(0, 3)
 
-//     if (!collections) {
-//       return null
-//     }
 
-//     const collectionIds = collections.map((collection) => collection.id)
-
-//     await Promise.all(
-//       collectionIds.map((id) =>
-//         getProductsList({
-//           queryParams: { collection_id: [id] },
-//           countryCode,
-//         })
-//       )
-//     ).then((responses) =>
-//       responses.forEach(({ response, queryParams }) => {
-//         let collection
-
-//         if (collections) {
-//           collection = collections.find(
-//             (collection) => collection.id === queryParams?.collection_id?.[0]
-//           )
-//         }
-
-//         if (!collection) {
-//           return
-//         }
-
-//         collection.products = response.products as unknown as Product[]
-//       })
-//     )
-
-//     return collections as unknown as ProductCollectionWithPreviews[]
-//   }
-// )
 const getCollectionsWithProducts = cache(
   async (
     countryCode: string
@@ -95,9 +57,17 @@ const getCollectionsWithProducts = cache(
       })
     )
 
-    return collections as unknown as ProductCollectionWithPreviews[]
+    // Sort collections based on `isFeatured` metadata (as a number)
+    const sortedCollections = collections.sort((a, b) => {
+      const isFeaturedA = parseInt(a.metadata?.isPriorityFeatured?.toString() || "0", 10)
+      const isFeaturedB = parseInt(b.metadata?.isPriorityFeatured?.toString() || "0", 10)
+      return isFeaturedA - isFeaturedB
+    })
+
+    return sortedCollections as unknown as ProductCollectionWithPreviews[]
   }
 )
+
 
 export default async function Home({
   params: { countryCode },
@@ -113,19 +83,7 @@ export default async function Home({
     return null
   }
 
-  console.log(collections, "for featured products")
 
-  // export default async function Home({
-  //   params: { countryCode },
-  // }: {
-  //   params: { countryCode: string }
-  // }) {
-  //   const collections = await getCollectionsWithProducts(countryCode)
-  //   const region = await getRegion(countryCode)
-
-  //   if (!collections || !region) {
-  //     return null
-  //   }
 
   return (
     <>
@@ -153,7 +111,7 @@ export default async function Home({
       <CollectionsGrid collections={allCollections.collections} region={region} />
     </div>
 
-     <div className="py-5 flex flex-col items-center justify-center">
+     {/* <div className="py-5 flex flex-col items-center justify-center">
       <p className="pt-1 md:pt-5 max-w-[900px] text-2xl font-bold text-[#023047] sm:text-lg md:text-xl lg:text-2xl xl:text-3xl dark:text-gray-400">
         BEST SELLERS
       </p>
@@ -161,7 +119,7 @@ export default async function Home({
     
     <div className="flex justify-center flex-wrap gap-8">
       <NewGrid collections={allCollections.collections} region={region} />
-    </div>
+    </div> */}
     
     <div className="relative flex justify-center items-center  md:p-6 p-1 pt-14 w-full overflow-hidden">
      
@@ -174,7 +132,7 @@ export default async function Home({
       </ul>
     </div>
     
-    <div className="flex justify-center flex-wrap gap-8 px-8">
+    <div className="flex justify-center flex-wrap  px-8 ">
       <NewPage />
     </div>
   </>

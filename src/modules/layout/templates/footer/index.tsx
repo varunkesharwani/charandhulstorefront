@@ -426,18 +426,7 @@ export default async function Footer() {
             alt="Picture of the author"
           />
         </div>
-        <div className="border-t-[1px] border-gray-200 py-10 px-3 md:px-20 flex justify-between gap-x-5">
-
-          <p className="text-gray-400 text-sm">
-            These Terms will be applied fully and affect to your use of this
-            Website. By using this Website, you agreed to accept all terms and
-            conditions written in here. You must not use this Website if you
-            disagree with any of these Website Standard
-          </p>
-          <div>
-            <Facebook />
-          </div>
-        </div>
+      
       </div>
     </footer>
   )

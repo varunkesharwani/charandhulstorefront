@@ -45,65 +45,6 @@ import { cn } from '@modules/home/components/lib/utils';
 
 
 
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDownIcon } from "@radix-ui/react-icons"
-
-// @ts-nocheck
-
-const Accordion = AccordionPrimitive.Root
-
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
- // @ts-ignore
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn("border-b", className)}
-    {...props}
-  />
-))
-AccordionItem.displayName = "AccordionItem"
-
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-   // @ts-ignore
-  <AccordionPrimitive.Header className="flex">
-    {/* @ts-ignore */}
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
-
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
-   // @ts-ignore
->(({ className, children, ...props }, ref) => (
-  //  @ts-ignore
-  <AccordionPrimitive.Content
-    ref={ref}
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
-  >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
-  </AccordionPrimitive.Content>
-))
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
-
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
 
 
 
@@ -250,10 +191,56 @@ const About = () => {
   return (
     <div className="overflow-hidden">
       <section className="text-center md:py-10 py-3 border-b-black bg-white to-white">
-        <p className="text-[62.5px]   font-be-vietnam-pro font-bold">About Us</p   >
-        <p className="text-[20.5px]   font-be-vietnam-pro leading-20 text-gray-400">Enhancing well-being through the benefits of copper and brass in our innovative solutions.</p>
+        <p className="text-[62.5px]   font-be-vietnam-pro font-bold"> Our Story </p   >
+      {/* <p className="text-[20.5px]   font-be-vietnam-pro leading-20 text-gray-400">Enhancing well-being through the benefits of copper and brass in our innovative solutions.</p> */}
       </section>
       <hr />
+
+
+
+      <section className="">
+        <div className="text-center pb-12">
+          <h2 className="text-3xl sm:text-3xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+
+          </h2>
+          <section className=" bg-white  mb-6 md:px-10 px-1 pt-10 ">
+        
+        <p className="leading-7 mb-4">
+          Starting Charandhul isn&apos;t a single story, but the result of hundreds of different adventures and failed attempts at different ventures. A bunch of friends met in college, and from the very first day, it was evident that there was going to be chaos and disruption of the pre-established norms.
+        </p>
+        <p className="leading-7 mb-4">
+          We started college a little late due to COVID, but whatever time we got, we made sure to make the most of it. We started an organisation called &apos;SAMPDA&apos; at our university, which became so big with time that we could never have guessed. We started doing events, which grew from 20 to 2000 people attending at once.
+        </p>
+        <p className="leading-7 mb-4">
+          From fighting to get more things for students to organising massive, crazy college trips for money, with time we kept growing. Swiftly, our aims got more aspirational, and we tried our luck at multiple different businesses. Some of them failed and some of them thrived, but all of them taught us a little about market needs and how to satisfy them.
+        </p>
+        <p className="leading-7 mb-4">
+          So one fine day, on a short trip to Mathura, we not only got the idea to do something to promote our culture and help our people, but kind Madhav also gave us the product, company name, and way to go about it and that&apos;s how Charandhul happened.
+        </p>
+        <h3 className="text-xl mb-3 font-medium">Dream at Delhi</h3>
+        <h3 className="text-xl mb-3 font-medium">Inspired at Mathura</h3>
+        <h3 className="text-xl mb-3 font-medium">Made at Moradabad</h3>
+        <h3 className="text-2xl text-blue-600/100  mb-3 font-medium">Available at भारत</h3>
+        <p className="leading-7 mb-4 pt-4 text-2xl text-orange-600 font-bold" >
+          Helping India to go back at:
+        </p>
+        <div className=" mb-4 list-none text-center font-medium ">
+          <h3 className="text-xl mb-3 font-medium" >Cooking in brass</h3>
+          <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
+          <h3 className="text-xl mb-3 font-medium" > Eating in Kansa</h3>
+         
+        </div>
+        <p className="text-center  text-2xl pt-5">
+          One product at a time.
+        </p>
+      </section>
+
+
+
+
+
+
+
       <section className="lqd-section features bg-white bg-no-repeat bg-cover bg-center text-start py-24" style={{ backgroundImage: "url('../../../../../public/about/features.svg')" }}>
         <div className="container relative  w-[95%] md:w-[80%] border-b border-ui-border-base mx-auto  ">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
@@ -301,226 +288,11 @@ const About = () => {
           className="font-display text-center text-[48px] md:text-[96px] lg:text-[184.5px] text-[#6c77f4] font-be-vietnam-pro  font-bold tracking-[-0.02em]  "
         /> */}
       </section>
-      <section className="">
-        <div className="text-center pb-12">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-            Our Story
-          </h2>
-          <section className=" bg-white  mb-6 md:px-10 px-1 pt-10 ">
-        
-        <p className="leading-7 mb-4">
-          Starting Charandhul isn&apos;t a single story, but the result of hundreds of different adventures and failed attempts at different ventures. A bunch of friends met in college, and from the very first day, it was evident that there was going to be chaos and disruption of the pre-established norms.
-        </p>
-        <p className="leading-7 mb-4">
-          We started college a little late due to COVID, but whatever time we got, we made sure to make the most of it. We started an organisation called &apos;SAMPDA&apos; at our university, which became so big with time that we could never have guessed. We started doing events, which grew from 20 to 2000 people attending at once.
-        </p>
-        <p className="leading-7 mb-4">
-          From fighting to get more things for students to organising massive, crazy college trips for money, with time we kept growing. Swiftly, our aims got more aspirational, and we tried our luck at multiple different businesses. Some of them failed and some of them thrived, but all of them taught us a little about market needs and how to satisfy them.
-        </p>
-        <p className="leading-7 mb-4">
-          So one fine day, on a short trip to Mathura, we not only got the idea to do something to promote our culture and help our people, but kind Madhav also gave us the product, company name, and way to go about it and that&apos;s how Charandhul happened.
-        </p>
-        <h3 className="text-xl mb-3 font-medium">Dream at Delhi</h3>
-        <h3 className="text-xl mb-3 font-medium">Inspired at Mathura</h3>
-        <h3 className="text-xl mb-3 font-medium">Made at Moradabad</h3>
-        <h3 className="text-2xl text-blue-600/100  mb-3 font-medium">Available at भारत</h3>
-        <p className="leading-7 mb-4 pt-4 text-2xl text-orange-600 font-bold" >
-          Helping India to go back at:
-        </p>
-        <div className=" mb-4 list-none text-center font-medium ">
-          <h3 className="text-xl mb-3 font-medium" >Cooking in brass</h3>
-          <h3 className="text-xl mb-3 font-medium" >Drinking in copper</h3>
-          <h3 className="text-xl mb-3 font-medium" > Eating in Kansa</h3>
-         
-        </div>
-        <p className="text-center  text-2xl pt-5">
-          One product at a time.
-        </p>
-      </section>
+     
           </div>
-          {/* <p className="mt-4 text-lg sm:text-xl">
-            Use customer data to build great and solid product experiences that convert.
-          </p>
-        </div>
-        <div className="flex flex-col md:flex-row justify-evenly max-w-6xl mx-auto p-4">
-          <Image
-            src={bigtab}
-            alt="tab box"
-            width={600}
-            height={400}
-            className="mb-10 md:mb-0"
-          />
-          <div className="w-full md:w-1/2 flex items-start pt-0 md:pl-10 justify-start">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg font-semibold py-2">Visual Site Editor</AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  Adjust your design through a wide range of theme options in the WordPress Customizer and see the changes instantly.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg font-semibold py-2">Responsive Settings</AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  Adjust your design through a wide range of theme options in the WordPress Customizer and see the changes instantly.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg font-semibold py-2">Live Theme Customizer</AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  Adjust your design through a wide range of theme options in the WordPress Customizer and see the changes instantly.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="text-lg font-semibold py-2">Hub Collection</AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  Yes. It&apos;s animated by default, but you can disable it if you prefer.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="text-lg font-semibold py-2">Light and Dark Modes</AccordionTrigger>
-                <AccordionContent className="px-4 py-2">
-                  Yes. It&apos;s animated by default, but you can disable it if you prefer.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center justify-evenly gap-3 mt-10 font-extrabold">
-          <div className="flex flex-col items-center">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <NumberTicker value={4} /> m+
-            </motion.h3>
-            <Image
-              src={shapestars}
-              alt="stars"
-              width={107}
-              height={15}
-            />
-            <p className="text-accent mt-2">Installations</p>
-            <p className="text-blue-500">Application Store</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <NumberTicker value={4.88} />
-            </motion.h3>
-            <Image
-              src={shapestars}
-              alt="stars"
-              width={107}
-              height={15}
-            />
-            <p className="text-accent mt-2">Rating</p>
-            <p className="text-blue-500">Application Store</p>
-          </div>
-          <div className="flex flex-wrap items-center space-x-4">
-            <Image
-              src={clientspotify}
-              alt="Spotify"
-              width={101}
-              height={30}
-            />
-            <Image
-              src={hulu}
-              alt="Hulu"
-              width={66}
-              height={21}
-            />
-            <Image
-              src={clientamd}
-              alt="AMD"
-              width={96}
-              height={37}
-            />
-          </div>
-        </div> */}
       </section>
 
       <section className="py-20 relative" style={{ backgroundImage: 'linear-gradient(180deg, #FFEEDE 50%, #fff 100%)' }} ref={ref}>
-        {/* <motion.div
-          className="absolute z-0 bottom-[60%] left-[60%] w-auto hidden sm:block"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
-        >
-          <Image
-            src={shapeHuman}
-            alt="3D shape human"
-            width={250}
-            height={276}
-          />
-        </motion.div>
-
-        <motion.div
-          className="absolute top-1/2 transform -translate-y-1/2 left-7 hidden sm:block"
-          initial={{ x: '-70px', y: '-213px', rotate: -200 }}
-          animate={animationControls}
-          transition={{ ease: 'linear', duration: 1 }}
-        >
-          <Image
-            src={shapePrism}
-            alt="3D shape"
-            width={100}
-            height={424}
-          />
-        </motion.div>
-
-        <motion.div
-          className="absolute top-3/5 left-1/2 transform -translate-x-1/2 hidden sm:block"
-          initial={{ x: '140px', y: '73px' }}
-          animate={animationControls}
-          transition={{ ease: 'linear', duration: 1 }}
-        >
-          <Image
-            src={shapeHand}
-            alt="3D shape"
-            width={70}
-            height={70}
-          />
-        </motion.div>
-
-        <motion.div
-          className="absolute top-2/3 right-0 hidden sm:block"
-          initial={{ x: '116px', y: '-220px', rotate: 132 }}
-          animate={animationControls}
-          transition={{ ease: 'linear', duration: 1 }}
-        >
-          <Image
-            src={shapeCube}
-            alt="3D shape"
-            width={100}
-            height={100}
-          />
-        </motion.div> */}
-
-        {/* <div className="container mx-auto text-center w-full md:w-3/5">
-          <Slider {...settings}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-8">
-                <Image src={testimonial.image} alt="Testimonial" className="mx-auto mb-4" width={100} height={121} />
-                <p className="text-lg mb-4">{testimonial.text}</p>
-                <h6 className="text-purple-400">{testimonial.author}</h6>
-              </div>
-            ))}
-          </Slider>
-        </div> */}
-
-        {/* <div className="container mx-auto mt-10 flex flex-wrap justify-center space-x-0 sm:space-x-10">
-          <Image src={clientSpotify} alt="Spotify" className="m-2" width={100} height={33} />
-          <Image src={clientNike} alt="Nike" className="m-2" width={65} height={23} />
-          <Image src={clientAmd} alt="AMD" className="m-2" width={75} height={17} />
-          <Image src={clientApper} alt="Apper" className="m-2" width={74} height={59} />
-          <Image src={clientLogitech} alt="Logitech" className="m-2" width={85} height={25} />
-          <Image src={clientLevis} alt="Levi's" className="m-2" width={74} height={36} />
-        </div> */}
       </section>
     </div>
   );

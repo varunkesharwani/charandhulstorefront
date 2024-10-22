@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -60,81 +62,70 @@
 
   .text-xsmall-regular {
     @apply text-[10px] leading-4 font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-small-regular {
     @apply text-xs leading-5 font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-small-semi {
     @apply text-xs leading-5 font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-base-regular {
     @apply text-sm leading-6 font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-base-semi {
     @apply text-sm leading-6 font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-large-regular {
     @apply text-base leading-6 font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-large-semi {
     @apply text-base leading-6 font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-xl-regular {
     @apply text-2xl leading-[36px] font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-xl-semi {
     @apply text-2xl leading-[36px] font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-2xl-regular {
     @apply text-[30px] leading-[48px] font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-2xl-semi {
     @apply text-[30px] leading-[48px] font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-3xl-regular {
     @apply text-[32px] leading-[44px] font-normal;
-    font-family: var(--font-playfair_display), serif;
   }
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
-    font-family: var(--font-playfair_display), serif;
   }
 }
-
 
 :root {
   --radius: 0.5rem;
 }
-
+/* Force Merriweather font for all elements */
+* {
+  font-family: 'Merriweather', serif !important;
+}
 body {
-  font-family: var(--font-cabin), serif;
+  font-family: 'Merriweather', serif;
 }
 
-h1, h2, h3, h4, h5, h6,p {
-  font-family: var(--font-playfair_display), serif;
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Merriweather', serif;
 }
 
 .revolving-text-wrapper {

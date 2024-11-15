@@ -124,9 +124,11 @@ export default function ProductActions({
       <div className="flex flex-col space-y-2">
         <span className="text-lg font-medium text-[#023047f8]">Price</span>
         <div className="flex items-center space-x-2">
-          <ProductPrice product={product} variant={variant} region={region} />
+     <ProductPrice product={product} variant={variant} region={region} />
         </div>
       </div
+      
+      <QuantityInput quantity={quantity} handleQuantityChange={handleQuantityChange} />
       <div className="flex flex-col md:flex-row md:space-x-2 space-x-0 space-y-2 md:space-y-0">
         <button
           onClick={handleAddToCart}

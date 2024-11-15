@@ -1,4 +1,3 @@
-// pages/return-exchange.js
 
 "use client";
 import React, { useState } from "react";
@@ -92,7 +91,7 @@ const ReturnExchange = () => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event : any ) => {
     event.preventDefault();
     setIsLoading(true);
 

@@ -1,5 +1,5 @@
-
 "use client";
+
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -91,7 +91,7 @@ const ReturnExchange = () => {
   const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (event : any ) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
 
@@ -121,79 +121,93 @@ const ReturnExchange = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <main className="flex flex-col items-center justify-center w-full max-w-md bg-white shadow-lg rounded-lg p-6 space-y-6">
-        <h1 className="text-4xl font-bold mb-4 text-[#032A3E]">Reach Out to Us</h1>
-        <ToastContainer />
-        <form className="space-y-6 w-full" onSubmit={handleSubmit}>
+    <div className="min-h-screen flex flex-col bg-gray-100">
+      <header className="bg-[#032A3E] text-white text-center py-6">
+        <h1 className="text-4xl font-bold">Return & Exchange</h1>
+      </header>
+      <main className="flex-grow flex flex-col items-center justify-center p-6">
+        <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8">
+          <h2 className="text-2xl font-bold text-center text-[#032A3E] mb-6">
+            Reach Out to Us
+          </h2>
           <ToastContainer />
-        <form onSubmit={handleSubmit} className="space-y-4 w-full">
-          <input
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2"
-          />
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2"
-          />
-          <input
-            type="text"
-            placeholder="Order ID"
-            value={orderId}
-            onChange={(e) => setOrderId(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2"
-          />
-          <textarea
-            placeholder="Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2"
-          />
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          >
-            {isLoading ? "Submitting..." : "Submit"}
-          </button>
-        </form>
-        </form>
-        {/* Render Policy Sections */}
-        <section className="space-y-6">
-          {[policies.refundCancellation, policies.returnExchange].map((policy, index) => (
-            <div key={index} className="space-y-4">
-              <h2 className="text-2xl font-bold text-[#032A3E]">{policy.title}</h2>
-              {policy.content.map((section, i) =>
-                typeof section === "string" ? (
-                  <p key={i} className="text-gray-700">{section}</p>
-                ) : (
-                  <div key={i}>
-                    <h3 className="text-xl font-semibold">{section.title}</h3>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-600">
-                      {section.points.map((point, j) => (
-                        <li key={j}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              )}
-            </div>
-          ))}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full border border-gray-300 rounded px-4 py-2"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full border border-gray-300 rounded px-4 py-2"
+            />
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="w-full border border-gray-300 rounded px-4 py-2"
+            />
+            <input
+              type="text"
+              placeholder="Order ID"
+              value={orderId}
+              onChange={(e) => setOrderId(e.target.value)}
+              className="w-full border border-gray-300 rounded px-4 py-2"
+            />
+            <textarea
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full border border-gray-300 rounded px-4 py-2"
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            >
+              {isLoading ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+        </div>
+        <section className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8 mt-8">
+          {[policies.refundCancellation, policies.returnExchange].map(
+            (policy, index) => (
+              <div key={index} className="space-y-4 mb-8">
+                <h3 className="text-2xl font-bold text-[#032A3E]">
+                  {policy.title}
+                </h3>
+                {policy.content.map((section, i) =>
+                  typeof section === "string" ? (
+                    <p key={i} className="text-gray-700">
+                      {section}
+                    </p>
+                  ) : (
+                    <div key={i}>
+                      <h4 className="text-xl font-semibold text-gray-800">
+                        {section.title}
+                      </h4>
+                      <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                        {section.points.map((point, j) => (
+                          <li key={j}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                )}
+              </div>
+            )
+          )}
         </section>
       </main>
+      <footer className="bg-[#032A3E] text-white text-center py-4">
+        <p>© 2024 Charandhul. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

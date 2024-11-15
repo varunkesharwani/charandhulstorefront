@@ -31,7 +31,7 @@ const policies = {
         ],
       },
       {
-        title: "Products with Manufacturer’s Warranty",
+        title: "Products with Manufacturer's Warranty",
         points: [
           "For products covered under the manufacturer's warranty, please contact the manufacturer directly to resolve any issues.",
         ],
@@ -121,91 +121,83 @@ const ReturnExchange = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
-      <header className="bg-[#032A3E] text-white text-center py-6">
-        <h1 className="text-4xl font-bold">Return & Exchange</h1>
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-[#032A3E] text-white py-4">
+        <h1 className="text-3xl font-bold text-center">Return & Exchange</h1>
       </header>
-      <main className="flex-grow flex flex-col items-center justify-center p-6">
-        <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-center text-[#032A3E] mb-6">
-            Reach Out to Us
-          </h2>
-          <ToastContainer />
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full border border-gray-300 rounded px-4 py-2"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border border-gray-300 rounded px-4 py-2"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className="w-full border border-gray-300 rounded px-4 py-2"
-            />
-            <input
-              type="text"
-              placeholder="Order ID"
-              value={orderId}
-              onChange={(e) => setOrderId(e.target.value)}
-              className="w-full border border-gray-300 rounded px-4 py-2"
-            />
-            <textarea
-              placeholder="Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              className="w-full border border-gray-300 rounded px-4 py-2"
-            />
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              {isLoading ? "Submitting..." : "Submit"}
-            </button>
-          </form>
+      <main className="container mx-auto px-4 py-6">
+        <div className="bg-white rounded-lg shadow-md">
+          <div className="p-4">
+            <h2 className="text-xl font-bold text-[#032A3E] mb-4">Reach Out to Us</h2>
+            <ToastContainer />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+              <input
+                type="text"
+                placeholder="Order ID"
+                value={orderId}
+                onChange={(e) => setOrderId(e.target.value)}
+                className="w-full border rounded px-3 py-2"
+              />
+              <textarea
+                placeholder="Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="w-full border rounded px-3 py-2 h-24"
+              />
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+              >
+                {isLoading ? "Submitting..." : "Submit"}
+              </button>
+            </form>
+          </div>
         </div>
-        <section className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8 mt-8">
-          {[policies.refundCancellation, policies.returnExchange].map(
-            (policy, index) => (
-              <div key={index} className="space-y-4 mb-8">
-                <h3 className="text-2xl font-bold text-[#032A3E]">
-                  {policy.title}
-                </h3>
-                {policy.content.map((section, i) =>
-                  typeof section === "string" ? (
-                    <p key={i} className="text-gray-700">
-                      {section}
-                    </p>
-                  ) : (
-                    <div key={i}>
-                      <h4 className="text-xl font-semibold text-gray-800">
-                        {section.title}
-                      </h4>
-                      <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                        {section.points.map((point, j) => (
-                          <li key={j}>{point}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )
-                )}
-              </div>
-            )
-          )}
+        <section className="bg-white rounded-lg shadow-md mt-6 p-4">
+          {[policies.refundCancellation, policies.returnExchange].map((policy, index) => (
+            <div key={index} className="mb-6">
+              <h3 className="text-xl font-bold text-[#032A3E] mb-3">{policy.title}</h3>
+              {policy.content.map((section, i) =>
+                typeof section === "string" ? (
+                  <p key={i} className="text-gray-700 mb-3">{section}</p>
+                ) : (
+                  <div key={i} className="mb-4">
+                    <h4 className="text-lg font-semibold text-gray-800 mb-2">{section.title}</h4>
+                    <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                      {section.points.map((point, j) => (
+                        <li key={j}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              )}
+            </div>
+          ))}
         </section>
       </main>
-      <footer className="bg-[#032A3E] text-white text-center py-4">
+      <footer className="bg-[#032A3E] text-white text-center py-3">
         <p>© 2024 Charandhul. All rights reserved.</p>
       </footer>
     </div>
